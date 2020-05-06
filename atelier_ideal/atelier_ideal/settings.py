@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("MY_SECRET_KEY") or 'x2b+!t1fd_&)5d9yt%=#cwok54cos+s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'atelier-ideal.heroku.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'atelier-ideal.herokuapp.com']
 # ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ") or []
 
 
