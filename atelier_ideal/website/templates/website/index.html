@@ -43,6 +43,9 @@
 									      {{ article.title | safe }}
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<span>
+											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+										</span>
 									</div>
 								{% endif %}
 							{% endfor %}
@@ -55,6 +58,9 @@
 									      {{ article.title | safe }}
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<span>
+											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+										</span>
 									</div>
 								{% endif %}
 							{% endfor %}
@@ -67,6 +73,9 @@
 									      {{ article.title | safe }}
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<span>
+											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+										</span>
 									</div>
 								{% endif %}
 							{% endfor %}

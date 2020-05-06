@@ -3,4 +3,12 @@
 {% load static %}
 
 {% block content %}
+	<section>
+		<div class="title">
+			{{ article.title | safe }}
+		</div>
+		<article>
+			{{ article.content | safe }}
+		</article>
+	</section>
 {% endblock %}
