@@ -17,16 +17,15 @@ def index(request):
         'articles': Article.objects.filter(status=1),
         'events': Event.objects.all().filter(event_date__gte = timezone.now()).order_by('event_date')[:10],
     }
-    print(context)
+
     return render(request, 'website/index.html', context)
-    # return HttpResponse(template.render(context, request=request))
 
 
 def events(request):
     date = request.GET.get('date')
     eventType = request.GET.get('type')
     keyword = request.GET.get('keyword')
-    print(keyword)
+
     events = Event.objects.all().order_by('event_date')
 
     if date != '' and date is not None:
