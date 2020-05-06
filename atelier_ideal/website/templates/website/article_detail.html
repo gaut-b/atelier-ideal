@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-	<section>
+	<section class="article">
 		<div class="title">
 			{{ article.title | safe }}
 		</div>
@@ -11,4 +11,7 @@
 			{{ article.content | safe }}
 		</article>
 	</section>
+
+	<link rel="stylesheet" type="text/css" src="{% static 'website/css/article.css' %}">
+
 {% endblock %}
