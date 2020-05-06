@@ -1,0 +1,72 @@
+
+.columns {
+  margin-top: 100px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.form-container {
+  position: sticky;
+  top: 100px;
+  height: 280px;
+  margin: 0px 30px 50px 30px;
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
+.input {
+  min-width: 140px;
+  width: 8vw;
+}
+
+.title {
+  color: #f1914a;
+}
+
+.box {
+  margin: 0 150px 20px 50px;
+}
+
+.media-content {
+  padding: 0px 20px;
+  text-align: justify;
+}
+
+/*.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 200px;
+  height: 150px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
+}*/

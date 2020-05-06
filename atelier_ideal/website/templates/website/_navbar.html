@@ -1,0 +1,56 @@
+{% load static %}
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img src="{% static 'website/img/logos/V2-chapelle.png' %}" width="100%" height="100%">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item">
+        Accueil
+      </a>
+
+      <a class="navbar-item">
+        Les événements
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Les assos
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Le lieu
+          </a>
+          <a class="navbar-item">
+            L'atelier idéal
+          </a>
+          <a class="navbar-item">
+            La dérive jubilatoire
+          </a>
+        </div>
+      </div>
+
+      <a class="navbar-item">
+        Les AMAPS
+      </a>
+
+      <a class="navbar-item">
+        Ailleurs ...
+      </a>
+
+    </div>
+   </div>
+</nav>
+
+<script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>

@@ -1,0 +1,36 @@
+.root {
+	height: 100vh;
+}
+
+.menu-container {
+	position: fixed;
+	max-width: 200px;
+	height: 100%;
+	border-right: 1px solid black;
+}
+
+.content-container {
+	width: 80vw;
+}
+
+.hero-body {
+	background-image: url('../img/header/Collectif_VRACK_La_Chapelle.jpg');
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+}
+
+.menu .logo {
+	width:100%;
+	height:100%;
+	max-width: 200px;
+}
+
+.footer {
+	height: 20vh;
+	min-height: 200px;
+	bottom-margin: 0;
+	width: 100%;
+}
+

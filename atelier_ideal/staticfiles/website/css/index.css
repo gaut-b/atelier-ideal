@@ -1,0 +1,40 @@
+.ads {
+	margin: 10px;
+}
+
+.events {
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.tile.is-ancestor {
+	margin: 10px;
+}
+
+
+
+.box:hover {
+	cursor: pointer;
+	transform: translateX(-10px) translateY(-10px);
+	transition-timing-function: ease-in
+	box-shadow: 10px 5px 5px black;
+}
+
+.card {
+	margin: 10px;
+}
+
+p {
+	text-align: justify;
+}
+
+.media-content {
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+h1 {
+	margin-top: 15px;
+}
+

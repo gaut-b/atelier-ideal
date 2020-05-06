@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La chapelle</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+  </head>
+  <body>
+
+  <!-- Nav bar -->
+  {% include 'website/_navbar.html' %}
+
+  {% block content %}
+  {% endblock %}
+
+  </body>
+
+
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <div class="columns">
+        <div class="column">
+          <p>
+            Lieu d’expérimentation sociale, politique et culturelle <br>
+            <i class="fas fa-map-marker-alt"></i>
+            36 rue Casanova, Toulouse <br>
+            <i class="fas fa-mobile-alt"></i>
+            05.61.12.37.55 <br>
+            <i class="far fa-envelope"></i>
+            contact@atelierideal.lautre.net<br>
+          </p>
+        </div>
+<!--         <div class="column is-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.654122065069!2d1.4346557157463484!3d43.61374276299893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb5c709bf75f%3A0x692e865a9f0eeb7c!2s36%20Rue%20Danielle%20Casanova%2C%2031000%20Toulouse!5e0!3m2!1sfr!2sfr!4v1588237646469!5m2!1sfr!2sfr" width="200px" height="200px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div> -->
+      </div>
+    </div>
+  </footer>
+</html>

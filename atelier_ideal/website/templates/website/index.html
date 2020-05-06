@@ -1,0 +1,138 @@
+
+{% extends 'website/base.html' %}
+
+{% load static %}
+{% load utils %}
+
+{% block content %}
+	<section class="hero is-info is-medium">
+	  <div class="hero-body">
+	    <div class="container">
+	      <h1 class="title">
+	        La chapelle
+	      </h1>
+	      <h2 class="subtitle">
+			Lieu d’expérimentation sociale, politique et culturelle
+	      </h2>
+	    </div>
+	  </div>
+	</section>
+
+	<div class="columns">
+		<div class="column">
+			{% if ad %}
+				<section class="ads">
+					<div class="card">
+						<div class="card-content">
+							<p class="title is-4">
+						      {{ ad.title | safe }}
+						    </p>
+							<p>{{ ad.content | safe }}</p>
+						</div>
+					</div>
+				</section>
+			{% endif %}
+			{%if articles%}
+				<section class="articles">
+					<div class="tile is-ancestor">
+						<div class="tile is-parent is-vertical is-4">
+							{% for article in articles %}
+								{% if forloop.counter0|modulo:3 == 0 %}
+									<div class="box">
+										<p class="title is-child">
+									      {{ article.title | safe }}
+									    </p>
+										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="tile is-parent is-vertical is-4">
+							{% for article in articles %}
+								{% if forloop.counter0|modulo:3 == 1 %}
+									<div class="box">
+										<p class="title is-child">
+									      {{ article.title | safe }}
+									    </p>
+										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="tile is-parent is-vertical is-4">
+							{% for article in articles %}
+								{% if forloop.counter0|modulo:3 == 2 %}
+									<div class="box">
+										<p class="title is-child">
+									      {{ article.title | safe }}
+									    </p>
+										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+				</section>
+			{% endif %}
+		</div>
+		<div class="column is-3 has-text-centered">
+			<div class="events">
+				{% if events %}
+					<h1 class="title is-4">&#192; venir ...</h1>
+					{% for event in events %}
+						<div class="card">
+							<div class="card-content">
+								<p class="title is-4">
+							      {{ event.event_type }}
+							    </p>
+								<div class="media">
+									<div class="media-left">
+										{% if event.photo %}
+											<figure class="image is-48x48">
+												<img src="{{ event.photo.url }}" alt="event image">
+											</figure>
+										{% endif %}
+									</div>
+									<div class="media-content">
+										<p class="title is-4">{{ event.title }}</p>
+										<p class="subtitle is-6">{{ event.subtitle }}</p>
+									</div>
+								</div>
+
+								<div class=media>
+									<span class="icon">
+										<i class="far fa-calendar-alt"></i>
+									</span>
+									<time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+								</div>
+
+							</div>
+						</div>
+					{% endfor %}
+					<span>
+						<a href="{% url 'website:events' %}">Voir tout les événements</a>
+					</span>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'website/css/index.css' %}">
+
+{% endblock %}
+
+<!-- <div class="tile is-ancestor">
+  <div class="tile is-4 is-vertical is-parent">
+    <div class="tile is-child box">
+      <p class="title">One</p>
+    </div>
+    <div class="tile is-child box">
+      <p class="title">Two</p>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box">
+      <p class="title">Three</p>
+    </div>
+  </div>
+</div> -->
