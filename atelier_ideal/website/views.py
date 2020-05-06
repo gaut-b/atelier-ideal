@@ -8,7 +8,7 @@ from .models import Event, EventType, Ad, Article
 from datetime import datetime, timedelta
 from django.utils.safestring import mark_safe
 
-
+from django.views.generic.detail import DetailView
 
 def index(request):
     template = loader.get_template('website/index.html')
@@ -44,3 +44,13 @@ def events(request):
     }
 
     return render(request, 'website/events.html', context)
+
+
+class ArticleDetailView(DetailView):
+
+    model = Article
+    template_name = 'website/article_detail.html'
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['now'] = timezone.now()
+    #     return context

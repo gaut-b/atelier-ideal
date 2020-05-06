@@ -47,7 +47,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 # admin.site = AdminSite()
 admin.site.register(Ad)
-# admin.site.register(EventType)
+admin.site.register(EventType)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.unregister(FlatPage)
