@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
-from faicon.fields import FAIconField
 
 # class Question(models.Model):
 #     question_text = models.CharField(max_length=200)
@@ -45,7 +44,6 @@ class Article(models.Model):
 
 class EventType(models.Model):
     name = models.CharField(max_length=50)
-    icon = FAIconField(null=True)
 
     def __str__(self):
         return self.name
@@ -53,11 +51,11 @@ class EventType(models.Model):
 
 class Event(models.Model):
     title = models.CharField(max_length=50)
-    subtitle = models.CharField(max_length=50)
+    subtitle = models.CharField(max_length=50, blank=True)
     event_type = models.ForeignKey(EventType, on_delete=models.PROTECT)
     event_date = models.DateTimeField()
     description = RichTextUploadingField(blank=True, null=True)
-    photo = models.ImageField(null=True)
+    photo = models.ImageField(null=True, blank=True)
 
 
     def __str__(self):
