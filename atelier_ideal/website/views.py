@@ -41,6 +41,7 @@ def events(request):
         'eventTypes': EventType.objects.all(),
         'events': events
     }
+    print(context)
 
     return render(request, 'website/events.html', context)
 
