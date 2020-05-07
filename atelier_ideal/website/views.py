@@ -25,9 +25,9 @@ def events(request):
     date = request.GET.get('date')
     eventType = request.GET.get('type')
     keyword = request.GET.get('keyword')
-
+    print(date, eventType, keyword)
     events = Event.objects.all().order_by('event_date')
-
+    print(events)
     if date != '' and date is not None:
         events = events.filter(event_date__gte=date)
     else:
