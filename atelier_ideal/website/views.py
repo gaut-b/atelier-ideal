@@ -47,10 +47,10 @@ def events(request):
 
 
 class ArticleDetailView(DetailView):
-
     model = Article
     template_name = 'website/article_detail.html'
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['now'] = timezone.now()
-    #     return context
+
+
+class EventDetailView(DetailView):
+    model = Event
+    template_name = 'website/event_detail.html'

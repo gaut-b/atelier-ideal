@@ -65,7 +65,7 @@
                   <article>{{ event.description | safe | truncatewords_html:100 }}</article>
                   <br>
                   <span>
-                    <a href="{ url 'website:event' id}">Voir les détails ...</a></span>
+                    <a href="{% url 'website:event-detail' event.pk %}">Voir les détails ...</a></span>
                 </div>
               </div>
             </div>
