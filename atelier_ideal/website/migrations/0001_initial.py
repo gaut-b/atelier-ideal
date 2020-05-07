@@ -4,7 +4,6 @@ import ckeditor_uploader.fields
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import faicon.fields
 
 
 class Migration(migrations.Migration):
@@ -29,7 +28,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('icon', faicon.fields.FAIconField(max_length=50, null=True)),
             ],
         ),
         migrations.CreateModel(

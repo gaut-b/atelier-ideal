@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'ckeditor',
     'ckeditor_uploader',
-    'faicon',
 ]
 
 MIDDLEWARE = [
