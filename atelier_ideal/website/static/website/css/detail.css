@@ -1,9 +1,10 @@
 .detail {
-	margin-top: 100px;
-	margin-right: 200px;
-	margin-left: 200px;
+	min-width: 200px;
+	margin: 10vh 20vw;
+	text-align: justify;
 }
 
-article {
-	text-align: jusity;
+.media-content {
+	overflow: hidden;
+	padding-bottom: 20px;
 }

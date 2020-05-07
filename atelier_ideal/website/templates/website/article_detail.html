@@ -3,15 +3,15 @@
 {% load static %}
 
 {% block content %}
-	<section class="article">
+	<div class="detail">
 		<div class="title">
 			{{ article.title | safe }}
 		</div>
 		<article>
 			{{ article.content | safe }}
 		</article>
-	</section>
+	</div>
 
-	<link rel="stylesheet" type="text/css" src="{% static 'website/css/article.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'website/css/detail.css' %}">
 
 {% endblock %}

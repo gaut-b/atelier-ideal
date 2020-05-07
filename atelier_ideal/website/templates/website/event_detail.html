@@ -4,22 +4,25 @@
 
 {% block content %}
 	<section class="detail">
-		<div>
-			<p class="title is-4">{{ event.title }}</p>
-			<p class="subtitle is-6">{{ event.subtitle }}</p>
-		</div>
-
-		<div>
-			<span class="icon">
-				<i class="far fa-calendar-alt"></i>
-			</span>
-			<time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+		<div class="level">
+			<div class="level-left">
+				<div>
+					<p class="title is-4">{{ event.title }}</p>
+					<p class="subtitle is-6">{{ event.subtitle }}</p>
+				</div>
+			</div>
+			<div class="level-right">
+				<span class="icon">
+					<i class="far fa-calendar-alt"></i>
+				</span>
+				<time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+			</div>
 		</div>
 		<article>
 			{{ event.description | safe }}
 		</article>
 	</section>
 
-	<link rel="stylesheet" type="text/css" src="{% static 'website/css/detail.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'website/css/detail.css' %}">
 
 {% endblock %}
