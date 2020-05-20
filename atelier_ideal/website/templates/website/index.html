@@ -5,7 +5,7 @@
 {% load utils %}
 
 {% block content %}
-	<section class="hero is-info is-medium">
+	<section class="hero is-medium">
 	  <div class="hero-body">
 	    <div class="container">
 	      <h1 class="title">
@@ -39,9 +39,20 @@
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 0 %}
 									<div class="box">
-										<p class="title is-child">
-									      {{ article.title | safe }}
-									    </p>
+										<div class="media">
+											{%if article.photo %}
+												<figure class="media-left">
+													<p class="image is-96x96">
+														<img src="{{ article.photo.url }}" alt="event image">
+													</p>
+												</figure>
+											{% endif %}
+											<div class="media-content">
+												<p class="title is-child">
+											      {{ article.title | safe }}
+											    </p>
+											</div>
+										</div>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
 										<span>
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
@@ -97,7 +108,7 @@
 								<div class="media">
 									<div class="media-left">
 										{% if event.photo %}
-											<figure class="image is-48x48">
+											<figure class="image is-96x96">
 												<img src="{{ event.photo.url }}" alt="event image">
 											</figure>
 										{% endif %}

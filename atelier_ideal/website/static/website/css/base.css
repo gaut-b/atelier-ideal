@@ -1,5 +1,14 @@
-.root {
-	height: 100vh;
+:root {
+ --primary-color: #f6f6f6;
+ --secondary-color: #d6e4f0;
+ --third-color: #1e56a0;
+ --fourth-color: #163172;
+ --primary-text: #212121;
+ --secondary-text: #757575;
+ --divider-color: #BDBDBD;
+ --text-icons-color: #000000;
+ font-size: 16px;
+ background-color: var(--secondary-color);
 }
 
 .menu-container {
@@ -13,24 +22,18 @@
 	width: 80vw;
 }
 
-.hero-body {
-	background-image: url('../img/header/Collectif_VRACK_La_Chapelle.jpg');
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center center;
-	background-size: cover;
-}
-
-.menu .logo {
-	width:100%;
-	height:100%;
-	max-width: 200px;
-}
 
 .footer {
-	height: 20vh;
+	background-color: var(--primary-color);
+	color: var(--primary-text);
 	min-height: 200px;
 	bottom-margin: 0;
 	width: 100%;
 }
 
+.footer iframe {
+	min-width: 250px;
+	width: 30vw;
+	min-height: 250px;
+	height: 20vh;
+}

@@ -13,6 +13,26 @@
 }
 
 
+.hero-body {
+	background-image: url('../img/header/banderole_chapelle.jpg');
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+}
+
+.hero-body .title {
+	font-size: 4rem;
+	color: white;
+
+}
+
+.hero-body .subtitle {
+	font-size: 1.5rem;
+	color: white;
+
+}
+
 
 .box:hover {
 	cursor: pointer;

@@ -3,21 +3,6 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
-# class Question(models.Model):
-#     question_text = models.CharField(max_length=200)
-#     pub_date = models.DateTimeField('date published')
-
-#     def __str__(self):
-#         return self.question_text
-
-
-# class Choice(models.Model):
-#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-#     choice_text = models.CharField(max_length=200)
-#     votes = models.IntegerField(default=0)
-
-#     def __str__(self):
-#         return self.choice_text
 
 STATUS = (
     (0, 'DRAFT'),
@@ -32,6 +17,7 @@ class Article(models.Model):
     content = RichTextUploadingField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    photo = models.ImageField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Article'
@@ -57,9 +43,9 @@ class Event(models.Model):
     description = RichTextUploadingField(blank=True, null=True)
     photo = models.ImageField(null=True, blank=True)
 
-
     def __str__(self):
         return self.title
+
 
 class Ad(models.Model):
     title = models.CharField(max_length=50)

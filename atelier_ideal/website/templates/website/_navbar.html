@@ -2,7 +2,7 @@
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="{% url 'website:index' %}">
+    <a class="navbar-item logo" href="{% url 'website:index' %}">
       <img src="{% static 'website/img/logos/V2-chapelle.png' %}" width="100%" height="100%">
     </a>
 
@@ -53,4 +53,5 @@
    </div>
 </nav>
 
+<link rel="stylesheet" type="text/css" href="{% static 'website/css/navbar.css' %}">
 <script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>

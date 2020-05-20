@@ -1,0 +1,13 @@
+.navbar {
+	background-color: var(--primary-color);
+	color: var(--primary-text);
+}
+
+a.navbar-item.logo {
+	padding: 0px;
+}
+
+.navbar-item img {
+	min-width: 70px;
+	min-height: 70px;
+}
