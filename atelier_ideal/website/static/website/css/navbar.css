@@ -34,7 +34,7 @@
 a.navbar-item.logo {
 	padding: 0px;
 	min-width: 90px;
-	background: linear-gradient(to left,  var(--primary-color), var(--background-color));
+	background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(35,41,49,1) 100%);
 
 }
 
