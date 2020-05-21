@@ -1,13 +1,44 @@
-.navbar {
+.navbar, .navbar-menu {
 	background-color: var(--primary-color);
+}
+
+.navbar-item {
+	color: white;
+}
+
+.navbar-start {
+	padding-top: 2px;
+	padding-left: 20px;
+}
+
+.navbar-start span {
 	color: var(--primary-text);
+}
+
+.navbar-start .title {
+	font-family: 'Amatic SC', cursive;
+}
+
+.navbar-start .subtitle {
+	font-size: 1rem;
+}
+
+.navbar-link {
+	color: white;
+}
+
+.navbar-dropdown {
+	background-color: var(--primary-color)
 }
 
 a.navbar-item.logo {
 	padding: 0px;
+	min-width: 90px;
+	background: linear-gradient(to left,  var(--primary-color), var(--background-color));
+
 }
 
 .navbar-item img {
-	min-width: 70px;
+	width: 70px;
 	min-height: 70px;
 }

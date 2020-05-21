@@ -5,17 +5,9 @@
 {% load utils %}
 
 {% block content %}
-	<section class="hero is-medium">
-	  <div class="hero-body">
-	    <div class="container">
-	      <h1 class="title">
-	        La chapelle
-	      </h1>
-	      <h2 class="subtitle">
-			Lieu d’expérimentation sociale, politique et culturelle
-	      </h2>
-	    </div>
-	  </div>
+	<section class="hero-container">
+		<div class="hero-image">
+		</div>
 	</section>
 
 	<div class="columns">
@@ -38,23 +30,23 @@
 						<div class="tile is-parent is-vertical is-4">
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 0 %}
-									<div class="box">
-										<div class="media">
-											{%if article.photo %}
-												<figure class="media-left">
-													<p class="image is-96x96">
-														<img src="{{ article.photo.url }}" alt="event image">
-													</p>
-												</figure>
-											{% endif %}
-											<div class="media-content">
-												<p class="title is-child">
-											      {{ article.title | safe }}
-											    </p>
-											</div>
-										</div>
+									<div class="article box">
+
+
+										<figure>
+											<p class="image">
+												<img src="{{ article.photo.url }}" alt="event image">
+											</p>
+										</figure>
+
+
+										<p class="title has-text-centered">
+									      {{ article.title | safe }}
+									    </p>
+
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
-										<span>
+										<br>
+										<span class="has-text-centered">
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>
 									</div>
@@ -64,13 +56,19 @@
 						<div class="tile is-parent is-vertical is-4">
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 1 %}
-									<div class="box">
-										<p class="title is-child">
+									<div class="article box">
+										<figure>
+											<p class="image">
+												<img src="{{ article.photo.url }}" alt="event image">
+											</p>
+										</figure>
+										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
-										<span>
-											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+										<br>
+										<span class="has-text-centered">
+											<a class="has-text-centered" href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>
 									</div>
 								{% endif %}
@@ -79,11 +77,17 @@
 						<div class="tile is-parent is-vertical is-4">
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 2 %}
-									<div class="box">
-										<p class="title is-child">
+									<div class="article box">
+										<figure class="has-text-centered">
+											<p class="image">
+												<img src="{{ article.photo.url }}" alt="event image">
+											</p>
+										</figure>
+										<p class="title title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<br>
 										<span>
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>

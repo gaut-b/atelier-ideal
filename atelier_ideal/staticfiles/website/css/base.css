@@ -1,9 +1,9 @@
 :root {
- --primary-color: #f6f6f6;
- --secondary-color: #d6e4f0;
+ --primary-color: #232931;
+ --secondary-color: #BDBDBD;
  --third-color: #1e56a0;
  --fourth-color: #163172;
- --primary-text: #212121;
+ --primary-text: #ffffff;
  --secondary-text: #757575;
  --divider-color: #BDBDBD;
  --text-icons-color: #000000;
@@ -36,4 +36,10 @@
 	width: 30vw;
 	min-height: 250px;
 	height: 20vh;
+}
+
+.static {
+	min-width: 200px;
+	margin: 150px 20vw 100px 20vw;
+	text-align: justify;
 }

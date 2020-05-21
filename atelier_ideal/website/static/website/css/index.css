@@ -13,12 +13,34 @@
 }
 
 
-.hero-body {
+.hero-container {
+	padding-top: 70px;
+	height: 25rem;
+}
+
+@media only screen and (max-width:992px) {
+	.hero-container {
+		height:22rem
+	}
+}
+@media only screen and (max-width:768px) {
+	.hero-container {
+		height:20rem
+	}
+}
+@media only screen and (max-width:575px) {
+	.hero-container {
+		height:18rem
+	}
+}
+
+.hero-image {
 	background-image: url('../img/header/banderole_chapelle.jpg');
+	background-position: center;
 	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center center;
 	background-size: cover;
+	position: relative;
+	height: 100%;
 }
 
 .hero-body .title {
@@ -33,12 +55,24 @@
 
 }
 
+.articles {
+	margin: 20px;
+}
 
-.box:hover {
-	cursor: pointer;
-	transform: translateX(-10px) translateY(-10px);
-	transition-timing-function: ease-in
-	box-shadow: 10px 5px 5px black;
+.article {
+	box-shadow: none;
+	min-width: 260px;
+	background-color: var(--background-color);
+	margin: 20px;
+}
+
+.article .title {
+	padding-top: 20px
+}
+
+.article figure img {
+	width: 370px;
+	height: 250px;
 }
 
 .card {
