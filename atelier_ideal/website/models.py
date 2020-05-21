@@ -20,7 +20,7 @@ class Article(models.Model):
     content = RichTextUploadingField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    photo = models.ImageField(null=True, blank=True)
+    photo = FileBrowseField("Photo", max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Article'
@@ -44,7 +44,7 @@ class Event(models.Model):
     event_type = models.ForeignKey(EventType, on_delete=models.PROTECT)
     event_date = models.DateTimeField()
     description = RichTextUploadingField(blank=True, null=True)
-    photo = FileBrowseField("", max_length=200, null=True, blank=True)
+    photo = FileBrowseField("Photo", max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title
