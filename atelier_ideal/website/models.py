@@ -1,7 +1,10 @@
+from django import forms
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from filebrowser.fields import FileBrowseField
+from filebrowser.base import FileObject
 
 
 STATUS = (
@@ -41,7 +44,7 @@ class Event(models.Model):
     event_type = models.ForeignKey(EventType, on_delete=models.PROTECT)
     event_date = models.DateTimeField()
     description = RichTextUploadingField(blank=True, null=True)
-    photo = models.ImageField(null=True, blank=True)
+    photo = FileBrowseField("", max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'atelier-ideal.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -151,7 +152,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+CKEDITOR_BROWSE_SHOW_DIRS=True
+CKEDITOR_RESTRICT_BY_DATE=False
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Static files (CSS, JavaScript, Images)

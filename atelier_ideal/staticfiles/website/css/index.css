@@ -43,12 +43,6 @@
 
 .card {
 	margin: 10px;
-	background-color: var(--third-color);
-	color: white;
-}
-
-.card .title {
-	color: white;
 }
 
 p {
