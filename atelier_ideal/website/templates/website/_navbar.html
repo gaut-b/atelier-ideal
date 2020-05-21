@@ -1,4 +1,6 @@
 {% load static %}
+{% load flatpages %}
+
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -25,33 +27,76 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          Les assos
+          Un Projet ?
         </a>
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            Le lieu
+            Faire une demande
           </a>
           <a class="navbar-item">
-            L'atelier idéal
+            Agenda détaillé
           </a>
           <a class="navbar-item">
-            La dérive jubilatoire
+            FAQ
           </a>
         </div>
       </div>
 
-      <a class="navbar-item">
-        Les AMAPS
-      </a>
+      {% get_flatpages '/collectifs/' as collectifs_pages %}
+      {% if collectifs_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Les Collectifs
+          </a>
 
-      <a class="navbar-item">
-        Ailleurs ...
-      </a>
+          <div class="navbar-dropdown">
+            {% for page in collectifs_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
 
-    </div>
+      {% get_flatpages '/lieu/' as lieu_pages %}
+        {% if lieu_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Le lieu
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in lieu_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% get_flatpages '/ailleurs/' as ailleurs_pages %}
+      {% if ailleurs_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Ailleurs
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in ailleurs_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
    </div>
 </nav>
+
 
 <link rel="stylesheet" type="text/css" href="{% static 'website/css/navbar.css' %}">
 <script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>

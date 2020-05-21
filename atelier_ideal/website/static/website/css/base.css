@@ -37,3 +37,9 @@
 	min-height: 250px;
 	height: 20vh;
 }
+
+.static {
+	min-width: 200px;
+	margin: 150px 20vw 100px 20vw;
+	text-align: justify;
+}
