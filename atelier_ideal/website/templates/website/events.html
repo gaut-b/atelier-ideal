@@ -2,81 +2,83 @@
 {% load static %}
 
 {% block content %}
-  <div class="columns">
-    <div class="column is-narrow form-container">
-      <form method="get">
-        <div class="field">
-          <label class="label is-small">&#192; partir du</label>
-          <div class="control">
-            <input name="date" class="input" id="datetime" type="date" default="Null">
+  <section class="events">
+    <div class="columns">
+      <div class="column is-narrow form-container">
+        <form method="get">
+          <div class="field">
+            <label class="label is-small">&#192; partir du</label>
+            <div class="control">
+              <input name="date" class="input" id="datetime" type="date" default="Null">
+            </div>
           </div>
-        </div>
 
-        <div class="field">
-          <label class="label is-small">Type d'évènement</label>
-          <div class="control">
-            {% if eventTypes %}
-              <div class="select">
-                <select class="input" name="type" default="Tous">
-                  <option>Tous</option>
-                  {% for eventType in eventTypes %}
-                    <option>{{ eventType.name }}</option>
-                  {% endfor %}
-                </select>
-              </div>
-            {% endif %}
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label is-small">Recherche</label>
-          <div class="control">
-            <input type="text" class="input" name="keyword" placeholder="Mot clé">
-          </div>
-        </div>
-
-        <div class="control has-text-centered">
-          <button type="submit" class="button is-primary">Filtrer</button>
-        </div>
-      </form>
-    </div>
-    <div class="column">
-      {% if events %}
-        {% for event in events %}
-          <div class="box">
-            <p class="title is-4">{{ event.title }}</p>
-            <p class="subtitle is-6">{{ event.subtitle }}</p>
-            <span>
-              <time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
-            </span>
-            <hr>
-            <div class="content">
-              <div class="media">
-                <div class="media-left">
-                  {% if event.photo %}
-                    <div class="card-image">
-                      <figure class="image">
-                        <img src={{event.photo.url}} alt="Placeholder image">
-                      </figure>
-                    </div>
-                  {% endif %}
+          <div class="field">
+            <label class="label is-small">Type d'évènement</label>
+            <div class="control">
+              {% if eventTypes %}
+                <div class="select">
+                  <select class="input" name="type" default="Tous">
+                    <option>Tous</option>
+                    {% for eventType in eventTypes %}
+                      <option>{{ eventType.name }}</option>
+                    {% endfor %}
+                  </select>
                 </div>
-                <div class="media-content">
-                  <article>{{ event.description | safe | truncatewords_html:100 }}</article>
-                  <br>
-                  <span>
-                    <a href="{% url 'website:event-detail' event.pk %}">Voir les détails ...</a>
-                  </span>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-small">Recherche</label>
+            <div class="control">
+              <input type="text" class="input" name="keyword" placeholder="Mot clé">
+            </div>
+          </div>
+
+          <div class="control has-text-centered">
+            <button type="submit" class="button is-primary">Filtrer</button>
+          </div>
+        </form>
+      </div>
+      <div class="column">
+        {% if events %}
+          {% for event in events %}
+            <div class="box">
+              <p class="title is-4">{{ event.title }}</p>
+              <p class="subtitle is-6">{{ event.subtitle }}</p>
+              <span>
+                <time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+              </span>
+              <hr>
+              <div class="content">
+                <div class="media">
+                  <div class="media-left">
+                    {% if event.photo %}
+                      <div class="card-image">
+                        <figure class="image">
+                          <img src={{event.photo.url}} alt="Placeholder image">
+                        </figure>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="media-content">
+                    <article>{{ event.description | safe | truncatewords_html:100 }}</article>
+                    <br>
+                    <span>
+                      <a href="{% url 'website:event-detail' event.pk %}">Voir les détails ...</a>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        {% endfor %}
-      {% else %}
-        <span>Aucun évènement ne correspond à votre recherche</span>
-      {% endif %}
+          {% endfor %}
+        {% else %}
+          <span>Aucun évènement ne correspond à votre recherche</span>
+        {% endif %}
+      </div>
     </div>
-  </div>
+  </section>
 
 <script type="text/javascript">
   document.getElementById('datetime').valueAsDate = new Date();
