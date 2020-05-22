@@ -2,8 +2,9 @@
 FROM python:latest
 
 # set work directory
-RUN mkdir /app/media/uploads
 WORKDIR /app
+RUN mkdir /app/media/uploads
+
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
