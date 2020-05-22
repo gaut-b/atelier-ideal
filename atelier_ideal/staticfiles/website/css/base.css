@@ -1,14 +1,22 @@
 :root {
  --primary-color: #232931;
- --secondary-color: #BDBDBD;
- --third-color: #1e56a0;
- --fourth-color: #163172;
+ --background-color: #f5eded;
+ --third-color: #d72323;
+ --fourth-color: #ffb400;
  --primary-text: #ffffff;
- --secondary-text: #757575;
+ --secondary-text: #0f4471;
  --divider-color: #BDBDBD;
  --text-icons-color: #000000;
  font-size: 16px;
- background-color: var(--secondary-color);
+ background-color: var(--background-color);
+}
+
+body, html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Ubuntu', serif;
 }
 
 .menu-container {

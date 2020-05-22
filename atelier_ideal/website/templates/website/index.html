@@ -31,19 +31,14 @@
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 0 %}
 									<div class="article box">
-
-
 										<figure>
 											<p class="image">
 												<img src="{{ article.photo.url }}" alt="event image">
 											</p>
 										</figure>
-
-
 										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
-
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
 										<br>
 										<span class="has-text-centered">
@@ -144,19 +139,3 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'website/css/index.css' %}">
 
 {% endblock %}
-
-<!-- <div class="tile is-ancestor">
-  <div class="tile is-4 is-vertical is-parent">
-    <div class="tile is-child box">
-      <p class="title">One</p>
-    </div>
-    <div class="tile is-child box">
-      <p class="title">Two</p>
-    </div>
-  </div>
-  <div class="tile is-parent">
-    <div class="tile is-child box">
-      <p class="title">Three</p>
-    </div>
-  </div>
-</div> -->
