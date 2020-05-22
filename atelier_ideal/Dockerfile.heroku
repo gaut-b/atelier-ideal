@@ -2,7 +2,7 @@
 FROM python:latest
 
 # set work directory
-MKDIR /app/media/uploads
+RUN mkdir /app/media/uploads
 WORKDIR /app
 
 # set environment variables
