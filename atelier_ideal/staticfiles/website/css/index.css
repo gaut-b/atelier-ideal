@@ -62,6 +62,7 @@
 .article {
 	box-shadow: none;
 	min-width: 260px;
+	min-height: 800px;
 	background-color: var(--background-color);
 	margin: 20px;
 }
@@ -92,3 +93,12 @@ h1 {
 	margin-top: 15px;
 }
 
+.link-container {
+	display: block;
+	text-align: center;
+}
+
+.event-footer span{
+	display: block;
+	margin-top: 5px;
+}

@@ -25,6 +25,7 @@ COPY . .
 
 # collect static files
 RUN python manage.py collectstatic --noinput
+RUN mkdir ./staticfiles/uploads
 
 # add and run as non-root user
 RUN useradd -m app

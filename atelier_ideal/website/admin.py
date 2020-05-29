@@ -1,5 +1,7 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from django.contrib.flatpages.admin import FlatPageAdmin
+from django.contrib.auth.models import User
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
 from django.utils.translation import gettext_lazy as _
@@ -11,6 +13,35 @@ from django import forms
 
 admin.autodiscover()
 admin.site.unregister(Site)
+admin.site.unregister(FlatPage)
+# Unregister the provided model admin
+admin.site.unregister(User)
+
+#Register out own model admin, based on the default UserAdmin
+@admin.register(User)
+class CustomUserAdmin(UserAdmin):
+    readonly_fields = [
+        'date_joined',
+        'last_login',
+    ]
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        is_superuser = request.user.is_superuser
+        disabled_fields = set()  # type: Set[str]
+
+        if not is_superuser:
+            disabled_fields |= {
+                'username',
+                'is_superuser',
+            }
+
+        for f in disabled_fields:
+            if f in form.base_fields:
+                form.base_fields[f].disabled = True
+
+        return form
+
 
 # Define a new FlatPageAdmin
 class FlatPageAdmin(FlatPageAdmin):
@@ -46,7 +77,6 @@ admin.site.register(Ad)
 admin.site.register(EventType)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
-admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
 # admin.site.register(Question)
 

@@ -155,7 +155,7 @@ USE_TZ = True
 # CKEDITOR Config
 CKEDITOR_BROWSE_SHOW_DIRS=False
 CKEDITOR_RESTRICT_BY_DATE=False
-CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 
 #FILEBROWSER Config
@@ -173,8 +173,10 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+# Move Media Folder to staticfiles to store uploaded files from filebrowser and ckeditor
+# This is ok since only admin users can upload files
+MEDIA_URL = '/staticfiles/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Flat pages
 LOGIN_URL = 'login'
