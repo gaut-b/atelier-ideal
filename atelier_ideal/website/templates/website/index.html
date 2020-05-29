@@ -128,9 +128,22 @@
 							</div>
 						</div>
 					{% endfor %}
-					<span>
-						<a href="{% url 'website:events' %}">Voir tout les événements</a>
-					</span>
+					<div class="event-footer">
+						<span>
+							<a href="{% url 'website:events' %}">Voir tout les événements</a>
+						</span>
+						<span>
+							{% load flatpages %}
+							{% get_flatpages '/projets/' as projects_pages %}
+							{% if projects_pages %}
+								{% for page in projects_pages %}
+									{% if 'demande' in page.title %}
+										<a href="{{ page.url }}">Proposer un événement</a>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						</span>
+					</div>
 				{% endif %}
 			</div>
 		</div>

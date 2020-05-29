@@ -31,15 +31,15 @@
         Les événements
       </a>
 
-      {% get_flatpages '/projets/' as collectifs_pages %}
-      {% if collectifs_pages %}
+      {% get_flatpages '/projets/' as projects_pages %}
+      {% if projects_pages %}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Un Projet ?
           </a>
 
           <div class="navbar-dropdown">
-            {% for page in collectifs_pages %}
+            {% for page in projects_pages %}
               <a class="navbar-item" href="{{ page.url }}">
                 {{ page.title }}
               </a>
@@ -48,15 +48,15 @@
         </div>
       {% endif %}
 
-      {% get_flatpages '/collectifs/' as collectifs_pages %}
-      {% if collectifs_pages %}
+      {% get_flatpages '/collectifs/' as collective_pages %}
+      {% if collective_pages %}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Les Collectifs
           </a>
 
           <div class="navbar-dropdown">
-            {% for page in collectifs_pages %}
+            {% for page in collective_pages %}
               <a class="navbar-item" href="{{ page.url }}">
                 {{ page.title }}
               </a>
@@ -65,15 +65,15 @@
         </div>
       {% endif %}
 
-      {% get_flatpages '/lieu/' as lieu_pages %}
-        {% if lieu_pages %}
+      {% get_flatpages '/lieu/' as places_pages %}
+        {% if places_pages %}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Le lieu
           </a>
 
           <div class="navbar-dropdown">
-            {% for page in lieu_pages %}
+            {% for page in places_pages %}
               <a class="navbar-item" href="{{ page.url }}">
                 {{ page.title }}
               </a>
@@ -82,15 +82,15 @@
         </div>
       {% endif %}
 
-      {% get_flatpages '/ailleurs/' as ailleurs_pages %}
-      {% if ailleurs_pages %}
+      {% get_flatpages '/ailleurs/' as elsewhere_pages %}
+      {% if elsewhere_pages %}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             Ailleurs
           </a>
 
           <div class="navbar-dropdown">
-            {% for page in ailleurs_pages %}
+            {% for page in elsewhere_pages %}
               <a class="navbar-item" href="{{ page.url }}">
                 {{ page.title }}
               </a>
