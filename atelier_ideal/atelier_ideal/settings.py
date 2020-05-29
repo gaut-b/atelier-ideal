@@ -152,9 +152,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-CKEDITOR_BROWSE_SHOW_DIRS=True
+# CKEDITOR Config
+CKEDITOR_BROWSE_SHOW_DIRS=False
 CKEDITOR_RESTRICT_BY_DATE=False
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+#FILEBROWSER Config
+# FILEBROWSER_DIRECTORY = ''
+DIRECTORY = 'uploads/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -168,7 +174,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Flat pages
 LOGIN_URL = 'login'

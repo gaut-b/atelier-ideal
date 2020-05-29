@@ -19,11 +19,13 @@
   width: 8vw;
 }
 
-.box {
+.event {
   margin: 0 150px 20px 50px;
+  padding: 20px 30px;
+  border-radius: 5px;
 }
 
-.box .title {
+.event .title {
   color: #f1914a;
 }
 
@@ -31,6 +33,12 @@
   padding: 0px 20px;
   text-align: justify;
 }
+
+.event img {
+  max-height: 256px;
+  max-width: 256px;
+}
+
 
 /*.calendar {
   width: 98%;

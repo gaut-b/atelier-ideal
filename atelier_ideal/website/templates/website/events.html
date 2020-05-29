@@ -44,7 +44,38 @@
       <div class="column">
         {% if events %}
           {% for event in events %}
-            <div class="box">
+          <div class="event card">
+            <div class="card-content">
+              <div class="media">
+                {% if event.photo %}
+                  <div class="media-left">
+                    <figure class="image">
+                      <img src={{event.photo.url}} alt="Placeholder image">
+                    </figure>
+                  </div>
+                {% endif %}
+                <div class="media-content">
+                  <p class="title is-4">{{ event.title }}</p>
+                  <p class="subtitle is-6">{{ event.subtitle }}</p>
+                  <span>
+                    <span class="icon">
+                      <i class="far fa-calendar-alt"></i>
+                    </span>
+                    <time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+                  </span>
+                </div>
+              </div>
+              <hr>
+              <div class="content">
+                <article>{{ event.description | safe | truncatewords_html:100 }}</article>
+                <br>
+                <span>
+                  <a href="{% url 'website:event-detail' event.pk %}">Voir les détails ...</a>
+                </span>
+              </div>
+            </div>
+          </div>
+<!--             <div class="box">
               <p class="title is-4">{{ event.title }}</p>
               <p class="subtitle is-6">{{ event.subtitle }}</p>
               <span>
@@ -71,7 +102,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           {% endfor %}
         {% else %}
           <span>Aucun évènement ne correspond à votre recherche</span>
