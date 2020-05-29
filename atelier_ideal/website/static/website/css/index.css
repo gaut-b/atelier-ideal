@@ -94,5 +94,6 @@ h1 {
 }
 
 .link-container {
-  margin: 0 50%;
+	display: block;
+	text-align: center;
 }
