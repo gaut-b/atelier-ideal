@@ -43,11 +43,20 @@ body {
 	min-width: 250px;
 	width: 30vw;
 	min-height: 250px;
-	height: 20vh;
+	height: 100%;
 }
 
 .static {
 	min-width: 200px;
 	margin: 150px 20vw 100px 20vw;
 	text-align: justify;
+}
+
+.footer-logo {
+	display: block;
+}
+
+.footer-logo img {
+	width: 150px;
+	height: 150px;
 }

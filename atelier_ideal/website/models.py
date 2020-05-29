@@ -13,14 +13,14 @@ STATUS = (
 )
 
 class Article(models.Model):
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(verbose_name="Titre", max_length=200, unique=True)
     slug = models.SlugField(max_length=20, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='article')
-    updated_on = models.DateTimeField(auto_now=True)
-    content = RichTextUploadingField(blank=True, null=True)
-    created_on = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, verbose_name="Auteur", on_delete=models.CASCADE, related_name='article')
+    updated_on = models.DateTimeField(verbose_name="Édité le", auto_now=True)
+    content = RichTextUploadingField(verbose_name="Contenu", blank=True, null=True)
+    created_on = models.DateTimeField(verbose_name="Crée le", auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    photo = FileBrowseField("Photo", max_length=200, null=True, blank=True)
+    photo = FileBrowseField(verbose_name="Photo", max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Article'
@@ -37,22 +37,47 @@ class EventType(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = "Type d'événements"
+        verbose_name_plural = "Types d'événements"
+
 
 class Event(models.Model):
-    title = models.CharField(max_length=50)
-    subtitle = models.CharField(max_length=50, blank=True)
-    event_type = models.ForeignKey(EventType, on_delete=models.PROTECT)
-    event_date = models.DateTimeField()
-    description = RichTextUploadingField(blank=True, null=True)
-    photo = FileBrowseField("Photo", max_length=200, null=True, blank=True)
+    title = models.CharField(verbose_name="Titre de l'événement", max_length=50)
+    subtitle = models.CharField(verbose_name="Sous-titre de l'événement", max_length=50, blank=True)
+    event_type = models.ForeignKey(EventType, verbose_name="Type d'événement", on_delete=models.PROTECT)
+    event_date = models.DateTimeField(verbose_name="Date de l'événement",)
+    description = RichTextUploadingField(verbose_name="Description de l'événement", blank=True, null=True)
+    photo = FileBrowseField(verbose_name="Photo de l'événement", max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'un événement'
+        verbose_name_plural = 'Événements'
+        ordering = ['-event_date']
 
 
 class Ad(models.Model):
-    title = models.CharField(max_length=50)
-    content = RichTextUploadingField(blank=True, null=True)
+    title = models.CharField(verbose_name="Titre", max_length=50)
+    content = RichTextUploadingField(verbose_name="Contenu", blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Annonce'
+        verbose_name_plural = 'Annonces'
+
+
+# class Infos(models.Model):
+#     name = models.CharField(verbose_name="Nom", max_length=50)
+#     slogan = models.CharField(verbose_name="Slogan", max_length=200)
+#     address = models.CharField(verbose_name="Adresse", max_length=200)
+#     email = models.EmailField(verbose_name="Email", max_length=200)
+#     phone = models.CharField(verbose_name="Téléphone", max_length=20)
+#     facebook = models.URLField(verbose_name="Facebook", max_length=200, null=True)
+#     twitter = models.URLField(verbose_name="Twitter", max_length=200, null=True)
+#     logo = FileBrowseField(verbose_name="Logo", max_length=200, null=True, blank=True)
+#     banner = FileBrowseField(verbose_name="Bannière", max_length=200, null=True, blank=True)
