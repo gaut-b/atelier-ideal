@@ -8,8 +8,8 @@ from filebrowser.base import FileObject
 
 
 STATUS = (
-    (0, 'DRAFT'),
-    (1, 'PUBLISHED')
+    (0, 'Brouillon'),
+    (1, 'Publié')
 )
 
 class Article(models.Model):

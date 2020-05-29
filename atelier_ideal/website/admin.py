@@ -12,11 +12,6 @@ from django import forms
 admin.autodiscover()
 admin.site.unregister(Site)
 
-# class AdminSite(admin.AdminSite):
-# 	site_title = 'Atelier Ideal Admin'
-# 	site_header = 'Atelier Ideal'
-# 	index_title = 'Atelier Ideal Administration'
-
 # Define a new FlatPageAdmin
 class FlatPageAdmin(FlatPageAdmin):
     fieldsets = (
@@ -44,6 +39,7 @@ class ArticleAdmin(admin.ModelAdmin):
 	list_filter = ('status',)
 	search_fields = ['title', 'content']
 	prepopulated_fields = {'slug': ('title',)}
+
 
 # admin.site = AdminSite()
 admin.site.register(Ad)
