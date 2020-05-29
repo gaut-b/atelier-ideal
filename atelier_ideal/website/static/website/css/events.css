@@ -39,6 +39,9 @@
   max-width: 256px;
 }
 
+.link-container {
+  margin: 0 50%;
+}
 
 /*.calendar {
   width: 98%;

@@ -41,7 +41,7 @@
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
 										<br>
-										<span class="has-text-centered">
+										<span class="link-container">
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>
 									</div>
@@ -62,7 +62,7 @@
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
 										<br>
-										<span class="has-text-centered">
+										<span class="link-container">
 											<a class="has-text-centered" href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>
 									</div>
@@ -83,7 +83,7 @@
 									    </p>
 										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
 										<br>
-										<span>
+										<span class="link-container">
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
 										</span>
 									</div>
