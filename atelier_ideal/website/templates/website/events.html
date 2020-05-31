@@ -67,7 +67,11 @@
               </div>
               <hr>
               <div class="content has-text-justified">
-                <article>{{ event.description | safe | truncatewords_html:100 }}</article>
+                <article>
+                  <div class="content">
+                    {{ event.description | safe | truncatewords_html:100 }}
+                  </div>
+                </article>
                 <br>
                 <span class="link-container">
                   <a href="{% url 'website:event-detail' event.pk %}">Voir les détails ...</a>

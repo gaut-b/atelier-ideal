@@ -4,9 +4,11 @@
 
 {% block content %}
 	<section class="static">
-	<div class="title">{{ flatpage.title }}</div>
+		<div class="title">{{ flatpage.title }}</div>
 		<article>
-			{{ flatpage.content }}
+			<div class="content">
+				{{ flatpage.content | safe }}
+			</div>
 		</article>
 	</section>
 {% endblock %}

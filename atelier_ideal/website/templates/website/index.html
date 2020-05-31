@@ -19,7 +19,7 @@
 							<p class="title is-4">
 						      {{ ad.title | safe }}
 						    </p>
-							<p>{{ ad.content | safe }}</p>
+							<div class="content">{{ ad.content | safe }}</div>
 						</div>
 					</div>
 				</section>
@@ -39,7 +39,7 @@
 										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
-										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 										<br>
 										<span class="link-container">
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
@@ -60,7 +60,7 @@
 										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
-										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 										<br>
 										<span class="link-container">
 											<a class="has-text-centered" href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
@@ -81,7 +81,7 @@
 										<p class="title title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
-										<p>{{ article.content | safe | truncatewords_html:50 }}</p>
+										<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 										<br>
 										<span class="link-container">
 											<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>

@@ -156,7 +156,11 @@ USE_TZ = True
 CKEDITOR_BROWSE_SHOW_DIRS=False
 CKEDITOR_RESTRICT_BY_DATE=False
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
 
 #FILEBROWSER Config
 # FILEBROWSER_DIRECTORY = ''
