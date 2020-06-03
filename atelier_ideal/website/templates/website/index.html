@@ -16,9 +16,9 @@
 				<section class="ads">
 					<div class="card">
 						<div class="card-content">
-							<p class="title is-4">
+							<h1 class="title is-4">
 						      {{ ad.title | safe }}
-						    </p>
+						    </h1>
 							<div class="content">{{ ad.content | safe }}</div>
 						</div>
 					</div>
@@ -28,16 +28,16 @@
 				<section class="articles">
 					{% for article in articles %}
 						<div class="article box">
-							{% if article.image %}
+							{% if article.photo %}
 								<figure>
 									<p class="image">
 										<img src="{{ article.photo.url }}" alt="article image">
 									</p>
 								</figure>
 							{% endif %}
-							<p class="title has-text-centered">
+							<h1 class="title has-text-centered">
 						      {{ article.title | safe }}
-						    </p>
+						    </h1>
 							<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 							<br>
 							<span class="link-container">
@@ -126,9 +126,9 @@
 					{% for event in events %}
 						<div class="card">
 							<div class="card-content">
-								<p class="title is-4">
+								<h3 class="title is-4">
 							      {{ event.event_type }}
-							    </p>
+							    </h3>
 								<div class="media">
 									<div class="media-left">
 										{% if event.photo %}
@@ -138,8 +138,8 @@
 										{% endif %}
 									</div>
 									<div class="media-content">
-										<p class="title is-4">{{ event.title }}</p>
-										<p class="subtitle is-6">{{ event.subtitle }}</p>
+										<h1 class="title is-4">{{ event.title }}</h1>
+										<h2 class="subtitle is-6">{{ event.subtitle }}</h2>
 									</div>
 								</div>
 
