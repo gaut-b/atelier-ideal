@@ -8,11 +8,6 @@
 	margin: 10px;
 }
 
-.tile.is-ancestor {
-	margin: 10px;
-}
-
-
 .hero-container {
 	padding-top: 70px;
 	height: 25rem;
@@ -23,11 +18,13 @@
 		height:22rem
 	}
 }
+
 @media only screen and (max-width:768px) {
 	.hero-container {
 		height:20rem
 	}
 }
+
 @media only screen and (max-width:575px) {
 	.hero-container {
 		height:18rem
@@ -59,9 +56,15 @@
 	margin: 20px;
 }*/
 
+section.articles {
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .article {
 	box-shadow: none;
-	min-width: 260px;
+	width: 410px;
 	min-height: 800px;
 	background-color: var(--background-color);
 	margin: 20px;

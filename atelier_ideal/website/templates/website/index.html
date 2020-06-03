@@ -26,16 +26,37 @@
 			{% endif %}
 			{%if articles%}
 				<section class="articles">
-					<div class="tile is-ancestor">
+					{% for article in articles %}
+						<div class="article box">
+							{% if article.image %}
+								<figure>
+									<p class="image">
+										<img src="{{ article.photo.url }}" alt="article image">
+									</p>
+								</figure>
+							{% endif %}
+							<p class="title has-text-centered">
+						      {{ article.title | safe }}
+						    </p>
+							<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
+							<br>
+							<span class="link-container">
+								<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+							</span>
+						</div>
+					{% endfor %}
+<!-- 					<div class="tile is-ancestor">
 						<div class="tile is-parent is-vertical is-4">
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 0 %}
 									<div class="article box">
-										<figure>
-											<p class="image">
-												<img src="{{ article.photo.url }}" alt="event image">
-											</p>
-										</figure>
+										{% if article.image %}
+											<figure>
+												<p class="image">
+													<img src="{{ article.photo.url }}" alt="article image">
+												</p>
+											</figure>
+										{% endif %}
 										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
@@ -52,11 +73,13 @@
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 1 %}
 									<div class="article box">
-										<figure>
-											<p class="image">
-												<img src="{{ article.photo.url }}" alt="event image">
-											</p>
-										</figure>
+										{% if article.image %}
+											<figure>
+												<p class="image">
+													<img src="{{ article.photo.url }}" alt="article image">
+												</p>
+											</figure>
+										{% endif %}
 										<p class="title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
@@ -73,11 +96,13 @@
 							{% for article in articles %}
 								{% if forloop.counter0|modulo:3 == 2 %}
 									<div class="article box">
-										<figure class="has-text-centered">
-											<p class="image">
-												<img src="{{ article.photo.url }}" alt="event image">
-											</p>
-										</figure>
+										{% if article.image %}
+											<figure>
+												<p class="image">
+													<img src="{{ article.photo.url }}" alt="article image">
+												</p>
+											</figure>
+										{% endif %}
 										<p class="title title has-text-centered">
 									      {{ article.title | safe }}
 									    </p>
@@ -90,7 +115,7 @@
 								{% endif %}
 							{% endfor %}
 						</div>
-					</div>
+					</div> -->
 				</section>
 			{% endif %}
 		</div>
