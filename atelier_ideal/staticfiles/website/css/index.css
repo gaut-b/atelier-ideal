@@ -1,18 +1,4 @@
-.ads {
-	margin: 10px;
-}
-
-.events {
-	border: 1px solid black;
-	border-radius: 5px;
-	margin: 10px;
-}
-
-.tile.is-ancestor {
-	margin: 10px;
-}
-
-
+/* Hero */
 .hero-container {
 	padding-top: 70px;
 	height: 25rem;
@@ -23,11 +9,13 @@
 		height:22rem
 	}
 }
+
 @media only screen and (max-width:768px) {
 	.hero-container {
 		height:20rem
 	}
 }
+
 @media only screen and (max-width:575px) {
 	.hero-container {
 		height:18rem
@@ -55,13 +43,25 @@
 
 }
 
-/*.articles {
-	margin: 20px;
-}*/
+/* Ads */
+.ads {
+	margin: 10px;
+}
 
+/* Articles */
+section.articles {
+	margin: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/* Article */
 .article {
 	box-shadow: none;
-	min-width: 260px;
+	width: 30vw;
+	max-width: 410px;
+	min-width: 280px;
 	min-height: 800px;
 	background-color: var(--background-color);
 	margin: 20px;
@@ -76,20 +76,14 @@
 	height: 250px;
 }
 
-.card {
+/* Events */
+.events-index {
+	border: 1px solid black;
+	border-radius: 5px;
 	margin: 10px;
 }
 
-p {
-	text-align: justify;
-}
-
-.media-content {
-	overflow: hidden;
-	overflow-wrap: break-word;
-}
-
-h1 {
+.events-index > h1 {
 	margin-top: 15px;
 }
 
@@ -101,4 +95,14 @@ h1 {
 .event-footer span{
 	display: block;
 	margin-top: 5px;
+}
+
+/* Event */
+.card {
+	margin: 10px;
+}
+
+.card .media {
+	display: flex;
+	flex-wrap: wrap;
 }

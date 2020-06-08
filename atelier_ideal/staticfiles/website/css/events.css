@@ -1,17 +1,25 @@
 
-.events > .columns {
-  margin-top: 100px;
-  margin-right: 200px;
-  margin-left: 200px;
-}
-
 .form-container {
-  position: sticky;
-  top: 100px;
-  height: 280px;
-  margin: 0px 30px 50px 30px;
+  position: absolute;
+  top: 110px;
+  left: 10%;
+  width: 80%;
+  z-index: 2;
+  margin: 0 auto;
   border-radius: 5px;
   background-color: lightgrey;
+}
+
+.form-container > form {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+}
+
+.input {
+  background-color: red;
 }
 
 .input {
@@ -19,7 +27,59 @@
   width: 8vw;
 }
 
-.event {
+.events-container {
+  padding-top: 250px;
+  padding-bottom: 200px;
+}
+
+.events-container .card {
+  width: 80%;
+  padding: 20px 30px;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+.events-container .card .media {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.events-container .card > .content {
+  text-align: justify;
+}
+
+.events-container .card .title {
+  color: #f1914a;
+}
+
+.events-container .card img {
+  width: 15vw;
+}
+/*
+@media only screen and (max-width: 765px) {
+
+  .form-container {
+
+    background-color: red;
+  }
+
+}*/
+
+@media only screen and (max-width:992px) {
+  .form-container > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .events-container {
+    padding-top: 450px;
+  }
+
+
+}
+/*.event {
   margin: 0 150px 20px 50px;
   padding: 20px 30px;
   border-radius: 5px;
@@ -37,7 +97,7 @@
 .event img {
   max-height: 256px;
   max-width: 256px;
-}
+}*/
 
 
 /*.calendar {
