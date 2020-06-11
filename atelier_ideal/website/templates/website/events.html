@@ -29,10 +29,14 @@
                   <div class="control">
                     {% if eventTypes %}
                       <div class="select">
-                        <select class="input" name="type" value="{{ chosenType }}" default="Tous">
-                          <option>Tous</option>
+                        <select class="input" name="type">
+                          <option value="Tous">Tous</option>
                           {% for eventType in eventTypes %}
-                            <option>{{ eventType.name }}</option>
+                            {% if chosenType == eventType.name %}
+                              <option value="{{ eventType.name }}" selected="selected">{{ eventType.name }}</option>
+                            {% else %}
+                              <option value="{{ eventType.name }}">{{ eventType.name }}</option>
+                            {% endif %}
                           {% endfor %}
                         </select>
                       </div>

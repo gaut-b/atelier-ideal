@@ -19,7 +19,6 @@ body, html {
 
 body {
 	font-family: 'Ubuntu', serif;
-	color: var(--font-color);
 }
 
 body a {
@@ -44,4 +43,10 @@ body a {
 .title-link :hover {
 	color: var(--link-color);
 	/*text-decoration: underline;*/
+}
+
+.static {
+	min-width: 200px;
+	margin: 150px 20vw 100px 20vw;
+	text-align: justify;
 }
