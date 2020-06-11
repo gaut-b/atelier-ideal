@@ -72,11 +72,9 @@ class ArticleAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug': ('title',)}
 
 
-# admin.site = AdminSite()
 admin.site.register(Ad)
 admin.site.register(EventType)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(FlatPage, FlatPageAdmin)
-# admin.site.register(Question)
 
