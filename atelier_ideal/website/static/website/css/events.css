@@ -40,6 +40,11 @@ form .label {
   padding-bottom: 200px;
 }
 
+.events-container span {
+  display: block;
+  margin: 100px
+}
+
 .events-container .card {
   width: 80%;
   padding: 20px 30px;
