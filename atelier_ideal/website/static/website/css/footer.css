@@ -1,0 +1,27 @@
+.footer {
+	background-color: var(--primary-color);
+	color: var(--primary-text);
+	min-height: 200px;
+	bottom-margin: 0;
+	width: 100%;
+}
+
+.footer iframe {
+	min-width: 250px;
+	width: 30vw;
+	min-height: 250px;
+	height: 100%;
+}
+
+.footer-logo {
+	display: block;
+}
+
+.footer-logo img {
+	width: 150px;
+	height: 150px;
+}
+
+.footer span a {
+	color: white;
+}

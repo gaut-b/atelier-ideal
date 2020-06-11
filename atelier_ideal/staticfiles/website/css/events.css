@@ -40,6 +40,11 @@ form .label {
   padding-bottom: 200px;
 }
 
+.events-container .text-container {
+  display: block;
+  margin: 100px
+}
+
 .events-container .card {
   width: 80%;
   padding: 20px 30px;
@@ -57,7 +62,7 @@ form .label {
 }
 
 .events-container .card .title {
-  color: #f1914a;
+  color: #F19528;
 }
 
 .events-container .card img {
@@ -67,6 +72,11 @@ form .label {
 .link-container {
   display: block;
   text-align: center;
+}
+
+button[type="submit"] {
+  background-color: #666666;
+  color: white;
 }
 /*
 @media only screen and (max-width: 765px) {
