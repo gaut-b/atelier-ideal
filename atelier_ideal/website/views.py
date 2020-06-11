@@ -37,8 +37,10 @@ def events(request):
     if keyword != '' and keyword is not None:
         events = events.filter(title__icontains=keyword) | events.filter(subtitle=keyword) | events.filter(description__icontains=keyword)
     context = {
-        'date': datetime.now(),
+        'date': date or datetime.now().strftime("%Y-%m-%d"),
+        'chosenType': eventType,
         'eventTypes': EventType.objects.all(),
+        'keyword': keyword or '',
         'events': events
     }
 

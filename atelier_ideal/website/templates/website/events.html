@@ -14,7 +14,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input name="date" class="input" id="datetime" type="date" default="Null">
+                    <input name="date" class="input" id="datetime" type="date" value="{{ date }}">
                   </div>
                 </div>
               </div>
@@ -29,7 +29,7 @@
                   <div class="control">
                     {% if eventTypes %}
                       <div class="select">
-                        <select class="input" name="type" default="Tous">
+                        <select class="input" name="type" value="{{ chosenType }}" default="Tous">
                           <option>Tous</option>
                           {% for eventType in eventTypes %}
                             <option>{{ eventType.name }}</option>
@@ -49,7 +49,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input type="text" class="input" name="keyword" placeholder="Mot clé">
+                    <input type="text" class="input" name="keyword" value="{{ keyword }}" placeholder="Mot clé">
                   </div>
                 </div>
               </div>
@@ -112,10 +112,7 @@
       </div>
   </section>
 
-<script type="text/javascript">
-  console.log(document.getElementById('datetime').valueAsDate)
-  document.getElementById('datetime').valueAsDate = new Date();
-</script>
+
 <link rel="stylesheet" type="text/css" href="{% static 'website/css/events.css' %}">
 
 {% endblock %}
