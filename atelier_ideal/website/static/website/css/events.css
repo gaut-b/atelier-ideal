@@ -40,7 +40,7 @@ form .label {
   padding-bottom: 200px;
 }
 
-.events-container span {
+.events-container .text-container {
   display: block;
   margin: 100px
 }

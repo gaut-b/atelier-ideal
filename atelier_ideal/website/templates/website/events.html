@@ -106,13 +106,14 @@
               </div>
             {% endfor %}
           {% else %}
-            <span class="has-text-centered">Aucun évènement ne correspond à votre recherche</span>
+            <span class="text-container has-text-centered">Aucun évènement ne correspond à votre recherche</span>
           {% endif %}
         </div>
       </div>
   </section>
 
 <script type="text/javascript">
+  console.log(document.getElementById('datetime').valueAsDate)
   document.getElementById('datetime').valueAsDate = new Date();
 </script>
 <link rel="stylesheet" type="text/css" href="{% static 'website/css/events.css' %}">
