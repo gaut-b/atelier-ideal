@@ -66,9 +66,9 @@
             {% for event in events %}
               <div class="event card">
                 <div class="card-content">
-                  <h3 class="title is-4">
+                  <h1 class="title is-4">
                     {{ event.event_type }}
-                  </h3>
+                  </h1>
                   <div class="media">
                     <div class="media-left">
                       {% if event.photo %}
@@ -78,8 +78,8 @@
                       {% endif %}
                     </div>
                     <div class="media-content">
-                      <h1 class="title is-4">{{ event.title }}</h1>
-                      <h2 class="subtitle is-6">{{ event.subtitle }}</h2>
+                      <h2 class="title is-4">{{ event.title }}</h2>
+                      <h3 class="subtitle is-6">{{ event.subtitle }}</h3>
                       <span>
                         <span class="icon">
                           <i class="far fa-calendar-alt"></i>

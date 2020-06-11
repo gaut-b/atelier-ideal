@@ -30,7 +30,6 @@ body {
 	width: 80vw;
 }
 
-
 .footer {
 	background-color: var(--primary-color);
 	color: var(--primary-text);
@@ -44,12 +43,6 @@ body {
 	width: 30vw;
 	min-height: 250px;
 	height: 100%;
-}
-
-.static {
-	min-width: 200px;
-	margin: 150px 20vw 100px 20vw;
-	text-align: justify;
 }
 
 .footer-logo {

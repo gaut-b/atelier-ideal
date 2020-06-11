@@ -4,20 +4,26 @@
 
 {% block content %}
 	<section class="detail">
-		<div class="level">
-			<div class="level-left">
-				<div>
-					<p class="title is-4">{{ event.title }}</p>
-					<p class="subtitle is-6">{{ event.subtitle }}</p>
-				</div>
+		<div class="media">
+			<div class="media-left">
+			  {% if event.photo %}
+			    <figure class="image">
+			      <img src="{{ event.photo.url }}" alt="event image">
+			    </figure>
+			  {% endif %}
 			</div>
-			<div class="level-right">
-				<span class="icon">
-					<i class="far fa-calendar-alt"></i>
-				</span>
-				<time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+			<div class="media-content">
+			  <h2 class="title is-4">{{ event.title }}</h2>
+			  <h3 class="subtitle is-6">{{ event.subtitle }}</h3>
+			  <span>
+			    <span class="icon">
+			      <i class="far fa-calendar-alt"></i>
+			    </span>
+			    <time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
+			  </span>
 			</div>
 		</div>
+		<hr>
 		<article>
 			<div class="content">
 				{{ event.description | safe }}
