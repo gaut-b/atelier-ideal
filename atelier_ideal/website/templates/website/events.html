@@ -56,7 +56,7 @@
             </div>
 
             <div class="control has-text-centered">
-              <button type="submit" class="button is-primary is-large">Filtrer</button>
+              <button type="submit" class="button is-large">Chercher</button>
             </div>
           </form>
         </div>
@@ -78,7 +78,7 @@
                       {% endif %}
                     </div>
                     <div class="media-content">
-                      <h2 class="title is-4">{{ event.title }}</h2>
+                      <h2 class="title title-link is-4"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h2>
                       <h3 class="subtitle is-6">{{ event.subtitle }}</h3>
                       <span>
                         <span class="icon">

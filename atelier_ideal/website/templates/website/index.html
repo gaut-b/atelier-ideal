@@ -37,8 +37,8 @@
 									</p>
 								</figure>
 							{% endif %}
-							<h1 class="title has-text-centered">
-						      {{ article.title | safe }}
+							<h1 class="title has-text-centered title-link">
+						      <a href="{% url 'website:article-detail' article.slug %}">{{ article.title | safe }}</a>
 						    </h1>
 							<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 							<br>
@@ -69,7 +69,7 @@
 										{% endif %}
 									</div>
 									<div class="media-content">
-										<h3 class="title is-4">{{ event.title }}</h3>
+										<h3 class="title is-4 title-link"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h3>
 										<h4 class="subtitle is-6">{{ event.subtitle }}</h4>
 									</div>
 								</div>
