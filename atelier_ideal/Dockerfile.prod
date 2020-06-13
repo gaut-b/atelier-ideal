@@ -39,7 +39,7 @@ RUN mkdir -p /home/app
 
 # create the app user
 #RUN addgroup --system app && adduser --system app --ingroup app
-RUN useradd -m app
+RUN groupadd -r app && useradd app --groups app
 USER app
 
 # create the appropriate directories
