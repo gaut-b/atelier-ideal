@@ -19,6 +19,7 @@ body, html {
 
 body {
 	font-family: 'Ubuntu', serif;
+	color: var(--font-color);
 }
 
 body a {

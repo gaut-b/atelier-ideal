@@ -22,7 +22,7 @@ select.input, .input {
   border-radius: 0px;
   border-bottom: 1px dashed grey;
   box-shadow: none;
-  min-width: 150px;
+  min-width: 200px;
   width: 10vw;
   font-style: italic;
 }
