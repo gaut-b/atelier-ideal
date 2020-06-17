@@ -45,6 +45,7 @@ class EventType(models.Model):
 class Event(models.Model):
     title = models.CharField(verbose_name="Titre de l'événement", max_length=50)
     subtitle = models.CharField(verbose_name="Sous-titre de l'événement", max_length=50, blank=True)
+    infos = models.CharField(verbose_name="Prix / restauration", max_length=50, blank=True, null=True)
     event_type = models.ForeignKey(EventType, verbose_name="Type d'événement", on_delete=models.PROTECT)
     event_date = models.DateTimeField(verbose_name="Date de l'événement",)
     description = RichTextUploadingField(verbose_name="Description de l'événement", blank=True, null=True)

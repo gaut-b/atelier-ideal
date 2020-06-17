@@ -40,11 +40,12 @@ body a {
 
 .title-link a {
 	color: var(--font-color);
+	text-decoration: none;
 }
 
 .title-link :hover {
 	color: var(--link-color);
-	/*text-decoration: underline;*/
+	text-decoration: underline;
 }
 
 .section-title {
@@ -54,6 +55,7 @@ body a {
 	font-weight: bold;
 	text-align: left;
 	margin: 10px;
+	padding-left: 10px;
 }
 
 /*.section-title > h1 {

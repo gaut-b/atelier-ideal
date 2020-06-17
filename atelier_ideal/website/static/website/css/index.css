@@ -113,17 +113,35 @@ section.articles {
 	text-align: center;
 }*/
 
+
 .event-footer span{
 	display: block;
 	margin-top: 5px;
 }
 
 /* Event */
-.card {
+.events-index > .box {
 	margin: 10px;
 }
 
-.card .media {
+.box .media-left figure {
+	text-align: center;
+	background-color: var(--primary-color);
+	color: var(--primary-text);
+	vertical-align: middle;
+	position: relative;
+}
+
+.box .media-left figure .event-date {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+
+/*.card .media {
 	display: flex;
 	flex-wrap: wrap;
-}
+}*/

@@ -44,7 +44,7 @@
 							    </h1>
 								<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
 								<span class="date-container is-size-6">
-									<i class="far fa-edit"></i> {{ article.created_on | date:"d F Y" | lower }}
+									<i class="fas fa-feather-alt"></i> {{ article.created_on | date:"d F Y" | lower }}
 								</span>
 							</div>
 						{% endfor %}
@@ -57,7 +57,40 @@
 				{% if events %}
 					<h1 class="title section-title is-size-5">&#192; venir ...</h1>
 					{% for event in events %}
-						<div class="card">
+						<div class="box">
+							<article class="media">
+								<div class="media-left">
+									<figure class="image is-64x64">
+										<div class="event-date is-size-7">
+											{{ event.event_date | date:"l d" | upper }}
+										</div>
+									</figure>
+								</div>
+								<div class="media-content">
+									<div class="content event-title">
+										<h3 class="title is-size-5 title-link"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h3>
+										<h4 class="subtitle is-size-6">{{ event.subtitle }}</h4>
+									</div>
+									<div class="content event-infos">
+										<div class="infos-date">
+											<span class="icon">
+												<i class="far fa-clock"></i>
+											</span>
+											<time datetime="{{ event.event_date }}">{{ event.event_date | date:"G:i" }}</time>
+										</div>
+										{% if event.infos %}
+											<div class="infos-price">
+												<span class="icon">
+													<i class="fas fa-info-circle"></i>
+												</span>
+												{{ event.infos }}
+											</div>
+										{% endif %}
+									</div>
+								</div>
+							</article>
+						</div>
+<!-- 						<div class="card">
 							<div class="card-content">
 								<h2 class="title is-size-5">
 							      {{ event.event_type }}
@@ -84,8 +117,9 @@
 								</div>
 
 							</div>
-						</div>
+						</div> -->
 					{% endfor %}
+					<hr>
 					<div class="event-footer">
 						<span>
 							<a href="{% url 'website:events' %}">Voir tout les événements</a>
