@@ -102,10 +102,16 @@ section.articles {
 	border-bottom: 2px dotted var(--primary-color);
 }
 */
-.link-container {
+.date-container {
+	display: block;
+	text-align: right;
+	font-style: italic;
+}
+
+/*.link-container {
 	display: block;
 	text-align: center;
-}
+}*/
 
 .event-footer span{
 	display: block;

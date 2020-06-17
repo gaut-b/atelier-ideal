@@ -18,7 +18,7 @@ class Article(models.Model):
     author = models.ForeignKey(User, verbose_name="Auteur", on_delete=models.CASCADE, related_name='article')
     updated_on = models.DateTimeField(verbose_name="Édité le", auto_now=True)
     content = RichTextUploadingField(verbose_name="Contenu", blank=True, null=True)
-    created_on = models.DateTimeField(verbose_name="Crée le", auto_now=True)
+    created_on = models.DateTimeField(verbose_name="Crée le", auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     photo = FileBrowseField(verbose_name="Photo", max_length=200, null=True, blank=True)
 

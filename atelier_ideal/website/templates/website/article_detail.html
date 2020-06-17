@@ -4,9 +4,16 @@
 
 {% block content %}
 	<div class="detail">
-		<div class="title">
+		<h1 class="title is-size-2">
 			{{ article.title | safe }}
-		</div>
+		</h1>
+		<span class="date-container is-size-6">
+			Publié le {{ article.created_on | date:"d F Y" | lower }}
+			{% if article.updated_on > article.created_on %}
+				 | Mis à jour le {{ article.updated_on | date:"d F Y" | lower }}
+			{% endif %}
+		</span>
+		<hr>
 		<article>
 			<div class="content">
 				{{ article.content | safe }}

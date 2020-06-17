@@ -43,9 +43,8 @@
 							      <a href="{% url 'website:article-detail' article.slug %}">{{ article.title | safe }}</a>
 							    </h1>
 								<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
-								<br>
-								<span class="link-container">
-									<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+								<span class="date-container is-size-6">
+									<i class="far fa-edit"></i> {{ article.created_on | date:"d F Y" | lower }}
 								</span>
 							</div>
 						{% endfor %}
