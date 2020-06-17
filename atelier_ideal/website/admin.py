@@ -66,8 +66,8 @@ class EventAdmin(admin.ModelAdmin):
 
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ('title', 'author', 'status', 'created_on')
-	list_filter = ('status',)
+	list_display = ('title', 'author', 'status', 'created_on', 'updated_on')
+	list_filter = ('status', 'created_on', 'updated_on')
 	search_fields = ['title', 'content']
 	prepopulated_fields = {'slug': ('title',)}
 

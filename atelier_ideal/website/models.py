@@ -14,11 +14,11 @@ STATUS = (
 
 class Article(models.Model):
     title = models.CharField(verbose_name="Titre", max_length=200, unique=True)
-    slug = models.SlugField(max_length=20, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
     author = models.ForeignKey(User, verbose_name="Auteur", on_delete=models.CASCADE, related_name='article')
-    updated_on = models.DateTimeField(verbose_name="Édité le", auto_now=True)
+    updated_on = models.DateTimeField(verbose_name="Dernière modification", auto_now=True)
     content = RichTextUploadingField(verbose_name="Contenu", blank=True, null=True)
-    created_on = models.DateTimeField(verbose_name="Crée le", auto_now_add=True)
+    created_on = models.DateTimeField(verbose_name="Date de création", auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     photo = FileBrowseField(verbose_name="Photo", max_length=200, null=True, blank=True)
 
