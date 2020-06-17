@@ -17,7 +17,7 @@
 				<section class="ads">
 					<div class="card">
 						<div class="card-content">
-							<h1 class="title is-4">
+							<h1 class="title is-size-5">
 						      {{ ad.title | safe }}
 						    </h1>
 							<div class="content">{{ ad.content | safe }}</div>
@@ -28,36 +28,39 @@
 
 			{%if articles%}
 				<section class="articles">
-					{% for article in articles %}
-						<div class="article box">
-							{% if article.photo %}
-								<figure>
-									<p class="image">
-										<img src="{{ article.photo.url }}" alt="article image">
-									</p>
-								</figure>
-							{% endif %}
-							<h1 class="title has-text-centered title-link">
-						      <a href="{% url 'website:article-detail' article.slug %}">{{ article.title | safe }}</a>
-						    </h1>
-							<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
-							<br>
-							<span class="link-container">
-								<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
-							</span>
-						</div>
-					{% endfor %}
+					<h1 class="title section-title is-size-5">Dernières publications</h1>
+					<div class="articles-container">
+						{% for article in articles %}
+							<div class="article box">
+								{% if article.photo %}
+									<figure>
+										<p class="image">
+											<img src="{{ article.photo.url }}" alt="article image">
+										</p>
+									</figure>
+								{% endif %}
+								<h1 class="title has-text-centered title-link is-size-5">
+							      <a href="{% url 'website:article-detail' article.slug %}">{{ article.title | safe }}</a>
+							    </h1>
+								<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
+								<br>
+								<span class="link-container">
+									<a href="{% url 'website:article-detail' article.slug %}">Voir plus ...</a>
+								</span>
+							</div>
+						{% endfor %}
+					</div>
 				</section>
 			{% endif %}
 		</div>
-		<div class="column is-3 has-text-centered">
+		<div class="column events-index-container is-3 has-text-centered">
 			<div class="events-index">
 				{% if events %}
-					<h1 class="title is-4">&#192; venir ...</h1>
+					<h1 class="title section-title is-size-5">&#192; venir ...</h1>
 					{% for event in events %}
 						<div class="card">
 							<div class="card-content">
-								<h2 class="title is-4">
+								<h2 class="title is-size-5">
 							      {{ event.event_type }}
 							    </h2>
 								<div class="media">
@@ -69,8 +72,8 @@
 										{% endif %}
 									</div>
 									<div class="media-content">
-										<h3 class="title is-4 title-link"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h3>
-										<h4 class="subtitle is-6">{{ event.subtitle }}</h4>
+										<h3 class="title is-size-5 title-link"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h3>
+										<h4 class="subtitle is-size-6">{{ event.subtitle }}</h4>
 									</div>
 								</div>
 
