@@ -37,7 +37,8 @@ a.navbar-item.logo {
 
 }
 
-.navbar-item img {
-	min-width: 70px;
+.navbar-item > img {
+	width: 70px;
 	min-height: 70px;
+	
 }
