@@ -133,11 +133,12 @@ section.articles {
 }
 
 .box .media-left figure .event-date {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	padding: 0;
 }
 
 

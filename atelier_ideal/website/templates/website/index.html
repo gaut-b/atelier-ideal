@@ -61,8 +61,13 @@
 							<article class="media">
 								<div class="media-left">
 									<figure class="image is-64x64">
-										<div class="event-date is-size-7">
-											{{ event.event_date | date:"l d" | upper }}
+										<div class="event-day-letter">
+											<div class="day-letter is-size-7">
+												{{ event.event_date | date:"l" | upper }}
+											</div>
+											<div class="day-letter is-size-3">
+												{{ event.event_date | date:"d"}}
+											</div>
 										</div>
 									</figure>
 								</div>
