@@ -9,18 +9,19 @@
  --divider-color: #BDBDBD;
  --text-icons-color: #000000;
  --link-color: #003dc5;
- --font-color: black;
+ --font-color: #4a4a4a;
  font-size: 16px;
  background-color: var(--background-color);
 }
 
+
 body, html {
 	height: 100%;
+	color: var(--font-color);
 }
 
 body {
 	font-family: 'Ubuntu', serif;
-	color: var(--font-color);
 }
 
 body a {
