@@ -42,7 +42,7 @@ form .label {
 
 .events-container .text-container {
   display: block;
-  margin: 100px
+  margin: 100px;
 }
 
 .events-container .card {
@@ -57,6 +57,7 @@ form .label {
   flex-wrap: wrap;
 }
 
+
 .events-container .card > .content {
   text-align: justify;
 }
@@ -65,8 +66,9 @@ form .label {
   color: #F19528;
 }
 
-.events-container .card img {
-  width: 15vw;
+.events-container .card .media-left img {
+  width: 200px;
+  max-height: 30vh;
 }
 
 .link-container {

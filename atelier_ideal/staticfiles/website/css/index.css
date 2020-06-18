@@ -113,6 +113,7 @@ section.articles {
 	text-align: center;
 }*/
 
+
 .event-footer span{
 	display: block;
 	margin-top: 5px;
@@ -123,21 +124,25 @@ section.articles {
 	margin: 10px;
 }
 
-.media-left figure {
+.box .media-left figure {
 	text-align: center;
-	background-color: var(--outline-color);
+	background-color: var(--primary-color);
+	color: var(--primary-text);
 	vertical-align: middle;
 	position: relative;
 }
 
-/*.media-left figure .event-date {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}*/
+.box .media-left figure .event-date {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: bold;
+	padding: 0;
+}
 
-.card .media {
+
+/*.card .media {
 	display: flex;
 	flex-wrap: wrap;
-}
+}*/
