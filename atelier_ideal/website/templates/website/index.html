@@ -1,8 +1,7 @@
 
 {% extends 'website/base.html' %}
 
-{% load static %}
-{% load utils %}
+{% load sass_tags static utils %}
 
 {% block content %}
 	<section class="hero-container">
@@ -95,34 +94,6 @@
 								</div>
 							</article>
 						</div>
-<!-- 						<div class="card">
-							<div class="card-content">
-								<h2 class="title is-size-5">
-							      {{ event.event_type }}
-							    </h2>
-								<div class="media">
-									<div class="media-left">
-										{% if event.photo %}
-											<figure class="image is-96x96">
-												<img src="{{ event.photo.url }}" alt="event image">
-											</figure>
-										{% endif %}
-									</div>
-									<div class="media-content">
-										<h3 class="title is-size-5 title-link"><a href="{% url 'website:event-detail' event.pk %}">{{ event.title }}</a></h3>
-										<h4 class="subtitle is-size-6">{{ event.subtitle }}</h4>
-									</div>
-								</div>
-
-								<div class="media">
-									<span class="icon">
-										<i class="far fa-calendar-alt"></i>
-									</span>
-									<time datetime="{{ event.event_date }}">{{ event.event_date }}</time>
-								</div>
-
-							</div>
-						</div> -->
 					{% endfor %}
 					<hr>
 					<div class="event-footer">
@@ -146,6 +117,6 @@
 		</div>
 	</div>
 
-	<link rel="stylesheet" type="text/css" href="{% static 'website/css/index.css' %}">
+	<link href="{% sass_src 'website/scss/index.scss' %}" rel="stylesheet" type="text/css" />
 
 {% endblock %}

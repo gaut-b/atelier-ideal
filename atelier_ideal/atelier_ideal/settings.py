@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'ckeditor',
     'ckeditor_uploader',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -166,6 +167,26 @@ CKEDITOR_CONFIGS = {
 # FILEBROWSER_DIRECTORY = ''
 DIRECTORY = 'uploads/'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'sass_processor.finders.CssFinder',
+)
+
+# SASS_PROCESSOR_INCLUDE_DIRS = [
+#     os.path.join(PROJECT_PATH, 'extra-styles/scss'),
+#     os.path.join(PROJECT_PATH, 'node_modules'),
+# ]
+
+# COMPRESS_PRECOMPILERS = (
+#     ('text/x-scss', 'django_libsass.SassCompiler'),
+# )
+
+# COMPRESS_ENABLED = True
+# COMPRESS_OFFLINE = True
+# LIBSASS_OUTPUT_STYLE = 'compressed'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -178,3 +199,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 # Flat pages
 LOGIN_URL = 'login'
 SITE_ID = 1
+
+

@@ -1,4 +1,5 @@
-{% load static %}
+{% load static sass_tags %}
+
 <footer class="footer">
   <div class="content has-text-centered">
     <div class="columns">
@@ -29,4 +30,4 @@
   </div>
 </footer>
 
-<link rel="stylesheet" type="text/css" href="{% static 'website/css/footer.css' %}">
+<link href="{% sass_src 'website/scss/footer.scss' %}" rel="stylesheet" type="text/css" />

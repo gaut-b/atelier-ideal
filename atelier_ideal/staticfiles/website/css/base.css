@@ -1,70 +1,61 @@
 :root {
- --primary-color: #232931;
- --background-color: #ffff;
- --outline-color: #f5eded;
- --third-color: #d72323;
- --fourth-color: #ffb400;
- --primary-text: #ffffff;
- --secondary-text: #0f4471;
- --divider-color: #BDBDBD;
- --text-icons-color: #000000;
- --link-color: #003dc5;
- --font-color: black;
- font-size: 16px;
- background-color: var(--background-color);
-}
+  --primary-color: #232931;
+  --background-color: #ffff;
+  --outline-color: #f5eded;
+  --third-color: #d72323;
+  --fourth-color: #ffb400;
+  --primary-text: #ffffff;
+  --secondary-text: #0f4471;
+  --divider-color: #BDBDBD;
+  --text-icons-color: #000000;
+  --link-color: #003dc5;
+  --font-color: #4a4a4a;
+  font-size: 16px;
+  background-color: var(--background-color); }
 
 body, html {
-	height: 100%;
-}
+  height: 100%;
+  color: var(--font-color); }
 
 body {
-	font-family: 'Ubuntu', serif;
-	color: var(--font-color);
-}
+  font-family: 'Ubuntu', serif; }
 
 body a {
-	color: var(--link-color);
-}
+  color: var(--link-color); }
 
 .menu-container {
-	position: fixed;
-	max-width: 200px;
-	height: 100%;
-	border-right: 1px solid black;
-}
+  position: fixed;
+  max-width: 200px;
+  height: 100%;
+  border-right: 1px solid black; }
 
 .content-container {
-	width: 80vw;
-}
+  width: 80vw; }
 
 .title-link a {
-	color: var(--font-color);
-	text-decoration: none;
-}
+  color: var(--font-color);
+  text-decoration: none; }
 
 .title-link :hover {
-	color: var(--link-color);
-	text-decoration: underline;
-}
+  color: var(--link-color);
+  text-decoration: underline; }
 
 .section-title {
-	border-top: 2px dotted var(--primary-color);
-	border-bottom: 2px dotted var(--primary-color);
-	padding: 10px 0px;
-	font-weight: bold;
-	text-align: left;
-	margin: 10px;
-	padding-left: 10px;
-}
+  border-top: 2px dotted var(--primary-color);
+  border-bottom: 2px dotted var(--primary-color);
+  padding: 10px 0px;
+  font-weight: bold;
+  text-align: left;
+  margin: 10px;
+  padding-left: 10px; }
 
 /*.section-title > h1 {
 	background-color: var(--primary-color);
 	color: var(--primary-text);
 }*/
-
 .static {
-	min-width: 200px;
-	margin: 150px 20vw 100px 20vw;
-	text-align: justify;
-}
+  min-width: 200px;
+  margin: 150px 20vw 100px 20vw;
+  text-align: justify; }
+
+/*# sourceMappingURL=base.css.map */

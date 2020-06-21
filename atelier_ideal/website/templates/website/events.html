@@ -1,5 +1,5 @@
 {% extends 'website/base.html' %}
-{% load static %}
+{% load static sass_tags %}
 
 {% block content %}
   <section class="events">
@@ -135,7 +135,7 @@
   </section>
 
 
-<link rel="stylesheet" type="text/css" href="{% static 'website/css/events.css' %}">
+<link rel="stylesheet" type="text/css" href="{% sass_src 'website/scss/events.scss' %}">
 
 {% endblock %}
 

@@ -1,5 +1,4 @@
-{% load static %}
-{% load flatpages %}
+{% load static sass_tags flatpages %}
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -102,6 +101,6 @@
   </div>
 </nav>
 
+  <link href="{% sass_src 'website/scss/navbar.scss' %}" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" type="text/css" href="{% static 'website/css/navbar.css' %}">
-<script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>
+  <script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>

@@ -1,6 +1,6 @@
 {% extends 'website/base.html' %}
 
-{% load static %}
+{% load static sass_tags %}
 
 {% block content %}
 	<div class="detail">
@@ -21,6 +21,6 @@
 		</article>
 	</div>
 
-	<link rel="stylesheet" type="text/css" href="{% static 'website/css/detail.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% sass_src 'website/scss/detail.scss' %}">
 
 {% endblock %}
