@@ -1,44 +1,41 @@
 .navbar, .navbar-menu {
 	background-color: var(--primary-color);
-}
 
-.navbar-item {
-	color: white;
-}
+	.navbar-item {
+		color: white;
 
-.navbar-start {
-	padding-top: 2px;
-	padding-left: 20px;
-}
+		&.logo {
+			padding: 0px;
+		}
+	}
 
-.navbar-start span {
-	color: var(--primary-text);
-}
+	.navbar-start {
+		padding-top: 2px;
+		padding-left: 20px;
 
-.navbar-start .title {
-	font-family: 'Amatic SC', cursive;
-}
+		.title {
+			font-family: 'Amatic SC', cursive;
+		}
 
-.navbar-start .subtitle {
-	font-size: 1rem;
-}
+		.subtitle {
+			font-size: 1rem;
+		}
 
-.navbar-link {
-	color: white;
-}
+		span {
+			color: var(--primary-text);
+		}
+	}
 
-.navbar-dropdown {
-	background-color: var(--primary-color)
-}
+	.navbar-link {
+		color: white;
+	}
 
-a.navbar-item.logo {
-	padding: 0px;
-	/*background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(35,41,49,1) 100%);*/
+	.navbar-dropdown {
+		background-color: var(--primary-color)
+	}
 
-}
-
-.navbar-item > img {
-	width: 70px;
-	min-height: 70px;
-	
+	.navbar-item > img {
+		width: 70px;
+		min-height: 70px;
+	}
 }

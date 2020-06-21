@@ -31,31 +31,19 @@
 	height: 100%;
 }
 
-/*.hero-body .title {
-	font-size: 4rem;
-	color: white;
-
-}
-
-.hero-body .subtitle {
-	font-size: 1.5rem;
-	color: white;
-}*/
-
 /* Ads */
 .ads {
 	margin: 10px;
-}
 
-.ads .card .card-content {
-	background-color: var(--outline-color);
+	.card-content {
+		background-color: var(--outline-color);
+	}
 }
 
 /* Articles */
 section.articles {
 	margin: 25px 10px;
 }
-
 
 .articles-container {
 	display: flex;
@@ -72,15 +60,16 @@ section.articles {
 	min-height: 800px;
 	background-color: var(--background-color);
 	margin: 20px;
-}
 
-.article .title {
-	padding-top: 20px
-}
+	.title {
+		padding-top: 20px
+	}
 
-.article figure img {
-	width: 370px;
-	height: 250px;
+	figure img {
+		width: 370px;
+		height: 250px;
+	}
+
 }
 
 /* Events */
@@ -88,61 +77,43 @@ section.articles {
 	margin: 25px 0px;
 	border-left: solid 1px grey;
 
-}
+	.events-index {
+		margin: 0px 10px;
 
-.events-index {
-	margin: 0px 10px;
-}
-/*
-.events-index > h1 {
-	margin: 0px 10px 25px 10px;
-	padding: 10px 0px;
-	text-align: left;
-	border-top: 2px dotted var(--primary-color);
-	border-bottom: 2px dotted var(--primary-color);
-}
-*/
-.date-container {
-	display: block;
-	text-align: right;
-	font-style: italic;
-}
+		.box {
+			margin: 10px;
 
-/*.link-container {
-	display: block;
-	text-align: center;
-}*/
+			.media-left figure {
+				text-align: center;
+				background-color: var(--primary-color);
+				color: var(--primary-text);
+				vertical-align: middle;
+				position: relative;
 
+				.event-date {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-weight: bold;
+					padding: 0;
+				}
+			}
 
-.event-footer span{
-	display: block;
-	margin-top: 5px;
-}
+			.date-container {
+				display: block;
+				text-align: right;
+				font-style: italic;
+			}
+		}
+	}
 
-/* Event */
-.events-index > .box {
-	margin: 10px;
-}
-
-.box .media-left figure {
-	text-align: center;
-	background-color: var(--primary-color);
-	color: var(--primary-text);
-	vertical-align: middle;
-	position: relative;
-}
-
-.box .media-left figure .event-date {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-weight: bold;
-	padding: 0;
+	.event-footer span{
+		display: block;
+		margin-top: 5px;
+	}
 }
 
 
-/*.card .media {
-	display: flex;
-	flex-wrap: wrap;
-}*/
+
+

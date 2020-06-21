@@ -1,31 +1,27 @@
 :root {
- --primary-color: #232931;
- --background-color: #ffff;
- --outline-color: #f5eded;
- --third-color: #d72323;
- --fourth-color: #ffb400;
- --primary-text: #ffffff;
- --secondary-text: #0f4471;
- --divider-color: #BDBDBD;
- --text-icons-color: #000000;
- --link-color: #003dc5;
- --font-color: #4a4a4a;
- font-size: 16px;
- background-color: var(--background-color);
-}
-
-
-body, html {
-	height: 100%;
-	color: var(--font-color);
+	--primary-color: #232931;
+	--background-color: #ffff;
+	--outline-color: #f5eded;
+	--third-color: #d72323;
+	--fourth-color: #ffb400;
+	--primary-text: #ffffff;
+	--secondary-text: #0f4471;
+	--divider-color: #BDBDBD;
+	--text-icons-color: #000000;
+	--link-color: #003dc5;
+	--font-color: #4a4a4a;
+	font-size: 16px;
+	background-color: var(--background-color);
 }
 
 body {
 	font-family: 'Ubuntu', serif;
-}
+	height: 100%;
+	color: var(--font-color);
 
-body a {
-	color: var(--link-color);
+	a {
+		color: var(--link-color);
+	}
 }
 
 .menu-container {
@@ -42,11 +38,11 @@ body a {
 .title-link a {
 	color: var(--font-color);
 	text-decoration: none;
-}
 
-.title-link :hover {
-	color: var(--link-color);
-	text-decoration: underline;
+	&:hover {
+		color: var(--link-color);
+		text-decoration: underline;
+	}
 }
 
 .section-title {
@@ -58,11 +54,6 @@ body a {
 	margin: 10px;
 	padding-left: 10px;
 }
-
-/*.section-title > h1 {
-	background-color: var(--primary-color);
-	color: var(--primary-text);
-}*/
 
 .static {
 	min-width: 200px;
