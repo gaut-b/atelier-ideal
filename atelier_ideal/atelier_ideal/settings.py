@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -164,13 +163,11 @@ CKEDITOR_CONFIGS = {
 }
 
 #FILEBROWSER Config
-# FILEBROWSER_DIRECTORY = ''
 DIRECTORY = 'uploads/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'sass_processor.finders.CssFinder',
 )
 
@@ -179,21 +176,13 @@ STATICFILES_FINDERS = (
 #     os.path.join(PROJECT_PATH, 'node_modules'),
 # ]
 
-# COMPRESS_PRECOMPILERS = (
-#     ('text/x-scss', 'django_libsass.SassCompiler'),
-# )
-
-# COMPRESS_ENABLED = True
-# COMPRESS_OFFLINE = True
-# LIBSASS_OUTPUT_STYLE = 'compressed'
-
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Move Media Folder to staticfiles to store uploaded files from filebrowser and ckeditor
 # This is ok since only admin users can upload files
-MEDIA_URL = '/staticfiles/'
+# MEDIA_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Flat pages
