@@ -169,7 +169,6 @@ DIRECTORY = 'uploads/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'sass_processor.finders.CssFinder',
 )
 
