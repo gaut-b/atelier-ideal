@@ -43,7 +43,7 @@
 								<h1 class="title has-text-centered title-link is-size-5">
 							      <a href="{% url 'website:article-detail' article.slug %}">{{ article.title | safe }}</a>
 							    </h1>
-								<div class="content">{{ article.content | safe | truncatewords_html:50 }}</div>
+								<div class="content has-text-justified">{{ article.content | safe | truncatewords_html:50 }}</div>
 								<span class="date-container is-size-6">
 									<i class="fas fa-feather-alt"></i> {{ article.created_on | date:"d F Y" | lower }}
 								</span>
@@ -53,7 +53,7 @@
 				</section>
 			{% endif %}
 		</div>
-		<div class="column events-index-container is-3 has-text-centered">
+		<div class="column events-index-container is-3">
 			<div class="events-index">
 				{% if events %}
 					<h1 class="title section-title is-size-5">&#192; venir ...</h1>
@@ -98,7 +98,7 @@
 						</div>
 					{% endfor %}
 					<hr>
-					<div class="event-footer">
+					<div class="event-footer has-text-centered">
 						<span>
 							<a href="{% url 'website:events' %}">Voir tout les événements</a>
 						</span>
@@ -119,6 +119,6 @@
 		</div>
 	</div>
 
-	<link href="{% sass_src 'website/scss/index.scss' %}" rel="stylesheet" type="text/css" />
+	<link href="{% sass_src 'website/scss/components/index.scss' %}" rel="stylesheet" type="text/css" />
 
 {% endblock %}

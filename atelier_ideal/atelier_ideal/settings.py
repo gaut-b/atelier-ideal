@@ -199,4 +199,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 LOGIN_URL = 'login'
 SITE_ID = 1
 
-
+# # SASS PROCESSOR
+# SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.scss$'

@@ -1,3 +1,5 @@
+@import '../variables';
+
 /* Hero */
 .hero-container {
 	padding-top: 70px;
@@ -36,7 +38,7 @@
 	margin: 10px;
 
 	.card-content {
-		background-color: var(--outline-color);
+		background-color: $outline-color;
 	}
 }
 
@@ -58,16 +60,22 @@ section.articles {
 	max-width: 410px;
 	min-width: 280px;
 	min-height: 800px;
-	background-color: var(--background-color);
+	background-color: $background-color;
 	margin: 20px;
 
 	.title {
-		padding-top: 20px
+		padding-top: 20px;
 	}
 
 	figure img {
 		width: 370px;
 		height: 250px;
+	}
+
+	.date-container {
+		display: block;
+		text-align: right;
+		font-style: italic;
 	}
 
 }
@@ -85,8 +93,8 @@ section.articles {
 
 			.media-left figure {
 				text-align: center;
-				background-color: var(--primary-color);
-				color: var(--primary-text);
+				background-color: $primary-color;
+				color: $primary-text;
 				vertical-align: middle;
 				position: relative;
 
@@ -100,11 +108,6 @@ section.articles {
 				}
 			}
 
-			.date-container {
-				display: block;
-				text-align: right;
-				font-style: italic;
-			}
 		}
 	}
 

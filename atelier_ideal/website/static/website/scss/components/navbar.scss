@@ -1,5 +1,6 @@
+@import '../variables';
+
 .navbar, .navbar-menu {
-	background-color: var(--primary-color);
 
 	.navbar-item {
 		color: white;
@@ -7,6 +8,10 @@
 		&.logo {
 			padding: 0px;
 		}
+	}
+
+	.has-dropdown {
+		color: red;
 	}
 
 	.navbar-start {
@@ -22,16 +27,8 @@
 		}
 
 		span {
-			color: var(--primary-text);
+			color: $primary-text;
 		}
-	}
-
-	.navbar-link {
-		color: var(--primary-text);
-	}
-
-	.navbar-dropdown {
-		background-color: var(--primary-color);
 	}
 
 	.navbar-item > img {
@@ -40,7 +37,6 @@
 	}
 
 	.navbar-burger {
-		color: var(--primary-text);
 		margin-top: auto;
 		margin-bottom: auto;
 	}
