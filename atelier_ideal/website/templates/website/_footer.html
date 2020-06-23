@@ -1,4 +1,5 @@
-{% load static sass_tags %}
+{% load static sass_tags solo_tags %}
+{% get_solo 'website.Settings' as settings %}
 
 <footer class="footer">
   <div class="content has-text-centered">
@@ -6,21 +7,30 @@
       <div class="column">
         <p class="has-text-centered">
           <span class="footer-logo">
-            <img src="{% static 'website/img/logos/V2-chapelle-inverse.png' %}" alt="logo" width="100%" height="100%">
+            <img src="{{ settings.logo.url }}" alt="logo" width="100%" height="100%">
           </span>
-          Lieu d’expérimentation sociale, politique et culturelle <br>
+          {{ settings.slogan }} <br>
           <i class="fas fa-map-marker-alt"></i>
-          36 rue Danielle Casanova, Toulouse<br>
+          {{ settings.address }}<br>
           <i class="fas fa-mobile-alt"></i>
-          05.61.12.37.55<br>
+          {{ settings.phone }}<br>
           <i class="far fa-envelope"></i>
-          contact@atelierideal.lautre.net<br>
+          {{ settings.email }}<br>
           <br>
-          <span>
-            <a href="https://www.facebook.com/atelier.ideal/">
-              <i class="fab fa-facebook-square fa-lg"></i>
-            </a>
-          </span>
+          {% if settings.facebook %}
+            <span>
+              <a href="{{ settings.facebook }}">
+                <i class="fab fa-facebook-square fa-lg"></i>
+              </a>
+            </span>
+          {% endif %}
+          {% if settings.twitter %}
+            <span>
+              <a href="{{ settings.twitter }}">
+                <i class="fab fa-twitter-square fa-lg"></i>
+              </a>
+            </span>
+          {% endif %}
         </p>
       </div>
       <div class="column">

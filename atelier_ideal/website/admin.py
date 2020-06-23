@@ -4,11 +4,12 @@ from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.auth.models import User
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.sites.models import Site
+from solo.admin import SingletonModelAdmin
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 from ckeditor.widgets import CKEditorWidget
-from .models import Event, Ad, Article, EventType
+from .models import Event, Ad, Article, EventType, Settings
 from django import forms
 
 admin.autodiscover()
@@ -72,8 +73,9 @@ class ArticleAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug': ('title',)}
 
 
-admin.site.register(Ad)
 admin.site.register(EventType)
+admin.site.register(Ad, SingletonModelAdmin)
+admin.site.register(Settings, SingletonModelAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(FlatPage, FlatPageAdmin)

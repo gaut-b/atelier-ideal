@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.utils import timezone
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import Event, EventType, Ad, Article
+from .models import Event, EventType, Ad, Article, Settings
 from datetime import datetime, timedelta
 from django.utils.safestring import mark_safe
 
@@ -13,7 +13,6 @@ from django.views.generic.detail import DetailView
 def index(request):
     template = loader.get_template('website/index.html')
     context = {
-        'ad': Ad.objects.last(),
         'articles': Article.objects.filter(status=1),
         'events': Event.objects.all().filter(event_date__gte = timezone.now()).order_by('event_date')[:10],
     }

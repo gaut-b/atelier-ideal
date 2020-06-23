@@ -1,6 +1,7 @@
 from django import forms
 from django.db import models
 from django.contrib.auth.models import User
+from solo.models import SingletonModel
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from filebrowser.fields import FileBrowseField
@@ -60,25 +61,27 @@ class Event(models.Model):
         ordering = ['-event_date']
 
 
-class Ad(models.Model):
-    title = models.CharField(verbose_name="Titre", max_length=50)
+class Ad(SingletonModel):
+    title = models.CharField(verbose_name="Titre", max_length=50, blank=True, null=True)
     content = RichTextUploadingField(verbose_name="Contenu", blank=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.title or ''
 
     class Meta:
         verbose_name = 'Annonce'
-        verbose_name_plural = 'Annonces'
 
 
-# class Infos(models.Model):
-#     name = models.CharField(verbose_name="Nom", max_length=50)
-#     slogan = models.CharField(verbose_name="Slogan", max_length=200)
-#     address = models.CharField(verbose_name="Adresse", max_length=200)
-#     email = models.EmailField(verbose_name="Email", max_length=200)
-#     phone = models.CharField(verbose_name="Téléphone", max_length=20)
-#     facebook = models.URLField(verbose_name="Facebook", max_length=200, null=True)
-#     twitter = models.URLField(verbose_name="Twitter", max_length=200, null=True)
-#     logo = FileBrowseField(verbose_name="Logo", max_length=200, null=True, blank=True)
-#     banner = FileBrowseField(verbose_name="Bannière", max_length=200, null=True, blank=True)
+class Settings(SingletonModel):
+    name = models.CharField(verbose_name="Nom", max_length=50, blank=True, null=True)
+    slogan = models.CharField(verbose_name="Slogan", max_length=200, blank=True, null=True)
+    address = models.CharField(verbose_name="Adresse", max_length=200, blank=True, null=True)
+    email = models.EmailField(verbose_name="Email", max_length=200, blank=True, null=True)
+    phone = models.CharField(verbose_name="Téléphone", max_length=20, blank=True, null=True)
+    facebook = models.URLField(verbose_name="Facebook", max_length=200, blank=True, null=True)
+    twitter = models.URLField(verbose_name="Twitter", max_length=200, blank=True, null=True)
+    logo = FileBrowseField(verbose_name="Logo", max_length=200, null=True, blank=True)
+    banner = FileBrowseField(verbose_name="Bannière", max_length=200, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Configuration'

@@ -1,18 +1,19 @@
-
 {% extends 'website/base.html' %}
 
-{% load sass_tags static utils %}
+{% load sass_tags solo_tags static utils %}
 
 {% block content %}
+	{% get_solo 'website.Settings' as settings %}
 	<section class="hero-container">
-		<div class="hero-image">
+		<div class="hero-image" style="background-image: url({{ settings.banner.url }})">
 		</div>
 	</section>
 
 	<div class="columns">
 		<div class="column is-9">
 
-			{% if ad %}
+			{% get_solo 'website.Ad' as ad %}
+			{% if ad.content and ad.title %}
 				<section class="ads">
 					<div class="card">
 						<div class="card-content">
@@ -24,6 +25,7 @@
 					</div>
 				</section>
 			{% endif %}
+
 
 			{%if articles%}
 				<section class="articles">

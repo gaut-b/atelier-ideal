@@ -27,11 +27,11 @@
 	}
 
 	.navbar-link {
-		color: white;
+		color: var(--primary-text);
 	}
 
 	.navbar-dropdown {
-		background-color: var(--primary-color)
+		background-color: var(--primary-color);
 	}
 
 	.navbar-item > img {
