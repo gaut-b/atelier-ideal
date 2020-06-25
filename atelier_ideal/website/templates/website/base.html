@@ -1,4 +1,4 @@
-{% load static sass_tags %}
+{% load static solo_tags sass_tags %}
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>La chapelle</title>
-    <link rel="icon" href="{% static 'website/img/logos/favico.png' %}" />
+    {% get_solo 'website.Settings' as settings %}
+    <link rel="icon" href="{{ settings.favicon.url }}" />
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
     <link href="{% sass_src 'website/scss/main.scss' %}" rel="stylesheet" type="text/css" />

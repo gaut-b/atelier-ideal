@@ -82,6 +82,7 @@ class Settings(SingletonModel):
     twitter = models.URLField(verbose_name="Twitter", max_length=200, blank=True, null=True)
     logo = FileBrowseField(verbose_name="Logo", max_length=200, null=True, blank=True)
     banner = FileBrowseField(verbose_name="Bannière", max_length=200, null=True, blank=True)
+    favicon = FileBrowseField(verbose_name="Favicon", max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Configuration'
