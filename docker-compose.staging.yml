@@ -27,8 +27,8 @@ services:
     build: nginx
     restart: always
     ports:
-      - 443:443
-      - 80:80
+      - 1338:443
+      - 1337:80
     volumes:
       - static_volume:/home/app/web/staticfiles
       - certs:/etc/nginx/certs
