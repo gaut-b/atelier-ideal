@@ -1,0 +1,28 @@
+$primary-color: #232931;
+$background-color: #ffff;
+$outline-color: #f5eded;
+
+$primary-text: #ffffff;
+$secondary-text: #0f4471;
+
+$link-color: #003dc5;
+$font-color: hsl(0, 0%, 29%);
+
+// Font color
+$text: $font-color;
+
+// Navbar
+$navbar-background-color: $primary-color;
+$navbar-item-color: $primary-text;
+$navbar-item-hover-background-color: $primary-text;
+$navbar-dropdown-item-hover-color: black;
+$navbar-dropdown-item-hover-background-color: $primary-text;
+$navbar-dropdown-background-color: $primary-color;
+$navbar-item-active-color: red;
+
+// Footer
+$footer-background-color: $primary-color;
+$footer-color: $primary-text;
+
+
+@import 'bulma/sass/utilities/_all';

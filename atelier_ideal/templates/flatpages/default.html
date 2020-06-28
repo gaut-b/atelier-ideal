@@ -1,0 +1,12 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+	<section class="static">
+		<div class="title">{{ flatpage.title }}</div>
+		<article>
+			<div class="content">
+				{{ flatpage.content | safe }}
+			</div>
+		</article>
+	</section>
+{% endblock %}

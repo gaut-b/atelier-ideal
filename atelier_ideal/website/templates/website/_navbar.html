@@ -1,0 +1,107 @@
+{% load static sass_tags solo_tags flatpages %}
+{% get_solo 'website.Settings' as settings %}
+
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item logo" href="{% url 'website:index' %}">
+      <img src="{{ settings.logo.url }}" width="100%" height="100%" alt="logo">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div>
+        <span class="title">{{ settings.name }}</span><br>
+        <span class="subtitle">{{ settings.slogan }}</span>
+      </div>
+    </div>
+    <div class="navbar-end">
+      <a class="navbar-item" href="{% url 'website:index' %}">
+        Accueil
+      </a>
+
+      <a class="navbar-item" href="{% url 'website:events' %}">
+        Les événements
+      </a>
+
+      {% get_flatpages '/projets/' as projects_pages %}
+      {% if projects_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Un Projet ?
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in projects_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% get_flatpages '/collectifs/' as collective_pages %}
+      {% if collective_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Les Collectifs
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in collective_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% get_flatpages '/lieu/' as places_pages %}
+        {% if places_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Le lieu
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in places_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% get_flatpages '/ailleurs/' as elsewhere_pages %}
+      {% if elsewhere_pages %}
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Ailleurs
+          </a>
+
+          <div class="navbar-dropdown">
+            {% for page in elsewhere_pages %}
+              <a class="navbar-item" href="{{ page.url }}">
+                {{ page.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+   </div>
+  </div>
+</nav>
+
+  <link href="{% sass_src 'website/scss/components/navbar.scss' %}" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="{% static 'website/js/navbar.js' %}"></script>

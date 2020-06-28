@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+env/
+db.sqlite3
+.env.dev
+.env.prod
+.env.prod.db
+.env.staging
+.env.staging.db
+.env.staging.proxy-companion
+venv/
+staticfiles/
+media/
